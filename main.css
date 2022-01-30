@@ -1,0 +1,7 @@
+.jumbotron { 
+    height: 700px; 
+}
+.container {
+    position: fixed;
+    left: 800px;
+}
