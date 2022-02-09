@@ -1,50 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+      <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
       <!--Google font-->
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-      <link href="main.css" rel="stylesheet">
 
-    </head>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Endowus</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <button class="btn btn-primary pull-right" style = "position:fixed; right:20px; top:10px;">
-            Logout
-          </button>
-        </ul>
+      <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+
+      <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Iceland&display=swap" rel="stylesheet">
+      <title>Game 1</title>
+      <style>
+        body {
+            background: url('assets/bckgrnd2.jpg') no-repeat center fixed;
+            background-size: cover;
+        }
+
+        .zoom {
+            transition: transform .2s; /* Animation */
+            width: 200px;
+            height: 900px;
+            margin: 0 auto;
+        }
+
+        .zoom:hover {
+            transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-light px-3">
+      <a class="navbar-brand mx-0" href="https://endowus.com/">
+          <img src="assets\endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
+      </a>
+      <form class="form-inline">
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Log In</button>
+      </form>
+    </nav>
+
+    <div class="py-5">
+      <div class="container px-sm-1">
+          <div class="container p-4 px-5 bg-light rounded-3 text-center">
+              <div class="m-2 mb-3">
+                  <h3 style="font-family: 'Bungee', cursive; font-size: 32px;">My Main Financial Goal:</h3>
+              </div>  
+              <div class="card-group">
+                  <div class="card">
+                    <img src="assets/student.png" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="height: 150px; width: 150px;">
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Student</h5>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="container-full-bg">  
+                      <div class="container"><br>
+                        <h5 class="question" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">
+                          Please select your main financial goal: <br><br>
+                          <input type="radio" id="goal1" name="goal">
+                          <label for="goal1">Goal 1</label><br><br>
+                          <input type="radio" id="goal2" name="goal">
+                          <label for="goal2">Goal 2</label><br><br> 
+                          <input type="radio" id="goal3" name="goal">
+                          <label for="goal3">Goal 3</label><br><br><br>
+                          <input type="submit" value="Submit">
+                        <br><br>
+                        </h5>
+                      </div>
+                </div>  
+          </div>
       </div>
-  </nav>
-  <div class="container-full-bg">  
-    <div class="jumbotron">
-        <div class="container">
-          <!-- <form action="/action_page.php"> -->
-            <p>Please select your main financial goal:</p>
-            <input type="radio" id="goal1" name="goal">
-            <label for="goal1">Option A</label><br>
-            <input type="radio" id="goal2" name="goal">
-            <label for="goal2">Option B</label><br>  
-            <input type="radio" id="goal3" name="goal">
-            <label for="goal3">Option C</label><br><br>
-            <input type="submit" value="Submit">
-          <!-- </form> -->
-          <br><br>
-          <p class="font-weight-bold">My Main Financial Goal</p>
-        </div>
-    </div>
   </div>
+     <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-      
+  </body>
 
 </html>
