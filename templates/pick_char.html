@@ -22,7 +22,8 @@
         body {
             background: url('assets/bckgrnd2.jpg') no-repeat center fixed;
             background-size: cover;
-  
+            /* hover pop up */
+            overflow-x: hidden
         }
 
         .zoom {
@@ -36,222 +37,46 @@
             transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
         }
 
-        /* modal */
-        /* body {
-            background-color: lightgrey;
-            max-width: 768px;
-            margin: 0 auto;
-            padding: 1em 0;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          }  */
-
-
-          a {
-            text-decoration: none;
+        .btn{
+            width:100px;
+            align-self: center;
           }
 
-          .popover__title {
-            font-size: 24px;
-            line-height: 36px;
-            text-decoration: none;
-            color: rgb(52, 78, 85);
-            text-align: center;
-            padding: 15px 0;
-          }
-
-          .popover__wrapper {
-            position: relative;
-            margin-top: 1.5rem;
-            display: inline-block;
-          }
-          .popover__content {
+        .card .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(81, 85, 85);
+            transition: opacity 0.15s ease-in;
             opacity: 0;
-            visibility: hidden;
-            position: absolute;
-            left: -150px;
-            transform: translate(0, 10px);
-            background-color: #9fe2e2;
-            padding: 1.5rem;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-            width: auto;
-          }
-          .popover__content:before {
-            position: absolute;
-            z-index: -1;
-            content: "";
-            right: calc(50% - 10px);
-            top: -8px;
-            border-style: solid;
-            border-width: 0 10px 10px 10px;
-            border-color: transparent transparent #9fe2e2 transparent;
-            transition-duration: 0.3s;
-            transition-property: transform;
-          }
-          .popover__wrapper:hover .popover__content {
-            z-index: 10;
-            opacity: 1;
-            visibility: visible;
-            transform: translate(0, -20px);
-            transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-          }
-          .popover__message {
-            text-align: center;
-          }
-          @import url(https://fonts.googleapis.com/css?family=Cantarell:400,400italic,700italic,700);
+            padding-top: 80px;
+            color: #fff;
+            text-shadow: 1px 1px 1px rgba(109, 104, 104, 0.15)
+        }
 
-          * {
-            padding:0;
-            margin:0;
-            position:relative;
-            box-sizing:border-box;
-            -webkit-font-smoothing: subpixel-antialiased !important; 
-            -webkit-backface-visibility: hidden; 
-          }
+        .card:hover .cover {
+            opacity: 1
+        }
 
-          p {
-            margin-bottom:1em;
-          }
+        .card .name {
+            font-weight: bold;
+            margin-bottom: 8px
+        }
 
-          a.modal-open {
-            display:block;
-            padding:20px;
-            color:#424242;
-            font-weight:bold;
-            margin:50px auto;
-            width:200px;
-            background:#e0e0e0;
-            border-radius:2px;
-            text-align:center;
-            text-decoration:none;
-          }
-          .modal {
-            background:rgba(0,0,0,0.7);
-            position:fixed;
-            width:100%;
-            height:100%;
-            top:0px;
-            left:0px;
-            bottom:0px;
-            transition:all .5s ease-in-out;
-            opacity:0;
-            z-index:-1;
-          }
-          .modal:target {
-            opacity:1;
-            transition:all .5s ease-in-out;
-            z-index:+1;
-          }
-          .modal-content {
-            position:fixed;
-            top:50%;
-            left:50%;
-            width:500px;
-            background:#fff;
-            border-radius:4px;
-            transform:translate(-50%, -200%);
-            transition:all .5s ease-in-out;
-            perspective: 1000;
-            outline:1px solid transparent;
-            opacity:0;
-          }
-          .modal:target .modal-content {
-            transform:translate(-50%, -50%);
-            transition:all .5s ease-in-out;
-            transition-delay:.5s;
-            z-index:9999;
-            opacity:1;
-          }
-          .modal-close {
-            float:right;
-            text-decoration:none;
-            padding:22px 22px;
-            color:#424242;
-            font-weight:800;
-            transition:all .5s ease-in-out;
-            z-index:+1;
-            background:rgba(0,0,0,0.1);
-            text-align:center;
-            border-radius:0 4px 0 0;
-          }
-          .modal-close:hover {
-            color:#fff;
-            background:rgba(0,0,0,0.5);
-            
-          }
-          .modal-content h3 {
-            padding:20px;
-            display:block;
-            text-align:center;
-            border-bottom:1px solid #e0e0e0;
-            text-transform:uppercase;
-            background:rgba(2,162,239,1);
-            color:#fff;
-            border-radius:4px 4px 0 0;
-          }
-          .modal-area {
-            padding:20px;
-          }
-
-          .modal-area input[type="radio"] {
-            display:none;
-          }
-          .modal-area label {
-            float:left;
-            display:block;
-            padding:10px 20px;
-            font-weight:700;
-            cursor:pointer;
-            z-index:+2;
-            background:rgba(0,0,0,.3);
-            color:#fff;
-            transition:all .5s ease-in-out;
-          }
-          .modal-area input[type="radio"]:checked + label {
-            background:#fff;
-            color:#424242;
-          }
-          .tab-list {
-            display:block;
-            padding:0;
-            margin:0;
-            list-style-type:none;
-            width:100%;
-            overflow:hidden;
-            height:150px;
-          }
-          .tab-list:before {
-            content:"";
-            display:block;
-            height:0;
-            clear:both;
-          }
-          .modal-tab {
-            display:inline-block;
-            width:100%;
-            padding-top:20px;
-            transform:translateX(-150%);
-            transition:all 300ms cubic-bezier(0, 0, .40, 1);
-            opacity:0;
-            top:0px;
-            position:absolute;
-            height:150px;
-            perspective:1000;
-          }
-          #opentab1:checked ~ .tab-list .tab1 {
-            transform:translateX(0%);
-            opacity:1;
-          }
-          #opentab2:checked ~ .tab-list .tab2 {
-            transform:translateX(0%);
-            opacity:1;
-          }
-          #opentab3:checked ~ .tab-list .tab3 {
-            transform:translateX(0%);
-            opacity:1;
-          }
+        .card .title {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #bbd8fb;
+            letter-spacing: 2px;
+            font-size: 13px;
+            margin-bottom: 20px
+        }
 
 
-    </style>
+
+  </style>
   </head>
   <body>
     <nav class="navbar navbar-light bg-light px-3">
@@ -268,47 +93,63 @@
             <div class="container p-4 px-5 bg-light rounded-3 text-center">
                 <div class="m-2 mb-3">
                     <h3 style="font-family: 'Bungee', cursive; font-size: 32px;">Choose your character!</h3>
-                </div>  
+                    <h6 style="font-family: 'Iceland', cursive; font-size: 23px;">Please choose the life stage that relates most to your goals</h6> 
+                </div> 
                 <!-- Characters Row 1-->
                 <div class="card-group">
                     <div class="card">
                       <img src="assets/student.png" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="height: 90px; width: 90px;">
+                      <!-- on hover show description -->
+                      <div class="cover">
+                        <h3 class="name" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Student Description</h3><br>
+                        <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">You are an average student currently staying with 
+                          your parents. You have many ‘wants’, but lack the money required to fulfil them. 
+                          You and your partner have started considering your plans for the future. This means planning for housing, and the other various bills that would come along.</p>
+                        <button type="button" class="btn btn-secondary" style="font-family: 'Iceland', cursive; font-size: 23px;">Select</button><br>
+                      </div>
                       <div class="card-body">
                         <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Student</h5>
-                        <p class="card-text" style="font-family: 'Iceland', cursive; font-size: 23px;">Annual Income: Under $5,000 💸 
-                          Goals: <br> Earn some additional income for personal use 💰 <br> Trying out investing &#128527;</p>
-                      </div>
-                      <!-- modal -->
-                      <div class="popover__wrapper">
-                        <a href="#">
-                          <h2 class="popover__title" style="font-family: 'Press Start 2P', cursive; font-size: 15px;">An Example</h2>
-                        </a>
-                        <div class="popover__content">
-                          <div class="modal-area" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">
-                            <p>You are an average student currently staying with your parents. 
-                              You have many "wants", but lack the money required to fulfil them. <br><br>
-                              You and your partner have also started considering your plans for the future. 
-                              This means planning for housing, and the other various bills that would come along.
-                            </p>
-                          </div>
-                        </div>
+                        <p class="card-text" style="font-family: 'Iceland', cursive; font-size: 23px; text-align:left;">
+                          Annual Income: <br> Under $5,000 💸 <br>
+                          Goals: <br> Earn additional income for personal use 💳 <br> Trying out investing 👌</p>
                       </div>
                     </div>
                     <div class="card">
                       <img src="assets/freshgrad.png" class="card-img-top mx-auto mt-4 zoom" alt="Young Adult" style="height: 120px; width: 120px;">
-                      <div class="card-body">
-                        <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Young Adult</h5>
-                        <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 23px;">Annual Income: $36,000 ~ $48,000 💸 
-                          <br>Goals: <br> Pay back student loans fully before BTO project is completed 👩‍💼💼<br> Save up for big ticket purchases (e.g. a car, house) 🚗🏡</p>
+                      <!-- on hover description -->
+                      <div class="cover">
+                        <h3 class="name" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Fresh Grad Description</h3><br>
+                        <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">You have just graduated from university and started 
+                          your new job. You are also still living with your parents. Upon graduating, you will need to start paying back your student loans. On top of that, you have gotten a BTO with your 
+                          fiancée, with about 3 years till the BTO project is completed.</p>
+                        <button type="button" class="btn btn-secondary" style="font-family: 'Iceland', cursive; font-size: 23px;">Select</button><br>
                       </div>
+                      <div class="card-body">
+                        <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Fresh Grad</h5>
+                        <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 23px; text-align:left;">
+                          Annual Income: <br> $36,000 ~ $48,000 💸 <br>
+                          Goals: <br> Pay back student loans 👩🏻‍🎓<br> Save up for big ticket purchases (e.g. a car, house) 🚗🏡</p>
+                      </div>
+                      
                     </div>
                     <div class="card">
                         <img src="assets/bachelor.png" class="card-img-top mx-auto mt-5 zoom" alt="Bachelor" style="height: 90px; width: 90px;">
+                        <!-- on hover description -->
+                        <div class="cover">
+                          <h3 class="name" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Bachelor Description</h3><br>
+                          <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">You are a bachelor looking to buy your own home after living 
+                            with your parents for too long. Being single and having had a stable career, you have no issues with your
+                            financial liabilities. You are looking to grow your wealth passively (and exponentially) and aim to retire by 
+                            the age of 55. </p>
+                          <button type="button" class="btn btn-secondary" style="font-family: 'Iceland', cursive; font-size: 23px;">Select</button><br>
+                        </div>
                         <div class="card-body">
                           <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Bachelor</h5>
-                          <p class="card-text" style="font-family: 'Iceland', cursive; font-size: 23px;">Annual Income: $84,000 ~ $120,000 💸 
-                            <br>Goals: <br> Grow his wealth 💰 <br> Own his own home 🏡 <br> Give his parents a comfortable life as they begin retiring 👪 </p>
+                          <p class="card-text" style="font-family: 'Iceland', cursive; font-size: 23px; text-align:left;">
+                            Annual Income: <br> $84,000 ~ $120,000 💸 <br>
+                            Goals: <br> Own your own home 🏡 <br> Give parents a comfortable life as they begin retiring 👪 </p>
                         </div>
+                       
                     </div>
                   </div>  
 
@@ -316,25 +157,43 @@
                 <div class="card-group">
                     <div class="card">
                         <img src="assets/houseowner.png" class="card-img-top mx-auto mt-4 zoom" alt="Newlyweds" style="height: 120px; width: 120px;">
+                         <!-- on hover description -->
+                        <div class="cover">
+                          <h3 class="name" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Married Couple Description</h3><br>
+                          <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">You are married with no kids, and having saved up over the last few years, you and your partner have just moved into 
+                            your newly renovated home. With no plans to have kids any time soon, you are considering how your finances should be 
+                            diversified / allocated accordingly, while finding ways to grow your wealth too.</p>
+                          <button type="button" class="btn btn-secondary" style="font-family: 'Iceland', cursive; font-size: 23px;">Select</button><br>
+                        </div>
                         <div class="card-body">
-                          <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Newlyweds</h5>
-                          <p class="card-text" style="font-family: 'Iceland', cursive; font-size: 23px;">Annual Income: $48,000 ~ $60,000 💸
-                            <br>Goals: <br> Grow your savings 💳🏦 <br>Adulting fees <br> (e.g. Pay bills, give parents a consistent amount of allowance) 💵</p>
+                          <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Married Couple (no kids)</h5>
+                          <p class="card-text" style="font-family: 'Iceland', cursive; font-size: 23px; text-align:left;">
+                            Annual Income: <br> $100,000 - $120,000 💸 <br>
+                            Goals: <br> Grow your wealth 💰 <br>House Downpayment, Renovation 🏦 <br> </p>
                         </div>
                     </div>
                     <div class="card">
                         <img src="assets/family.png" class="card-img-top mx-auto mt-5 zoom" alt="Family Man" style="width: auto; height: 90px">
+                        <!-- on hover description -->
+                        <div class="cover">
+                          <h3 class="name" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Family Man Description</h3><br>
+                          <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">You are working at a managerial position. You have two children aged 15 and 18. The workload often keeps you busy 
+                            and you rarely get to spend time with your children. You are also worried about the expenses that would come about when it is time 
+                            for the children to embark on their tertiary education (Private University / Overseas Trips). Motivated to retire 
+                            early, you are working hard to achieve that goal.</p>
+                          <button type="button" class="btn btn-secondary" style="font-family: 'Iceland', cursive; font-size: 23px;">Select</button><br>
+                        </div>
                         <div class="card-body">
                           <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Family Man</h5>
-                          <p class="card-text" style="font-family: 'Iceland', cursive; font-size: 23px;">Annual Income: $100,000 - $120,000 💸 
-                            <br>Goals: <br> Retire early 🧑‍💼 <br> Have enough money to provide for children’s tertiary education 🎓</p>
+                          <p class="card-text" style="font-family: 'Iceland', cursive; font-size: 23px; text-align:left;">
+                            Annual Income: <br> $100,000 - $120,000 💸 <br>
+                            Goals: <br> Retire early 🧑‍💼 <br> Kids' tertiary education 🎓</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
        <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
