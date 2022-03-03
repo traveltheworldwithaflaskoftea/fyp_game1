@@ -67,48 +67,48 @@
                       <form>
                           <div class="card">
                             <div class="container-full-bg">  
-                              {% for question in questions %}
+                              <form id="questionnaire"> 
+                                {% for question in questions %}
                                 <div class="container m-3">
                                   <h5 class="questionnaire mb-1" style="font-family: 'Montserrat', sans-serif; font-size: 18px;">
                                     {{ question.question }}
-                                    <fieldset class="form-group mt-1">
                                       <div class="row" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                            <label class="form-check-label" for="gridRadios1">
+                                            <input class="form-check-input" type="radio" id="A" name="questionnaire" value="A" checked>
+                                            <label class="form-check-label" for="A">
                                               {{ question.a }}
                                             </label>
                                           </div>
                                           <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                            <label class="form-check-label" for="gridRadios2">
+                                            <input class="form-check-input" type="radio" id="B" name="questionnaire" value="B">
+                                            <label class="form-check-label" for="B">
                                               {{ question.b }}
                                             </label>
                                           </div>
                                           {% if question.c != "" %}
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                              <label class="form-check-label" for="gridRadios3">
+                                              <input class="form-check-input" type="radio" id="C" name="questionnaire" id="gridRadios3" value="C">
+                                              <label class="form-check-label" for="C">
                                                 {{ question.c }}
                                               </label>
                                             </div>
                                           {% endif %}
                                           {% if question.d != "" %}
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
-                                              <label class="form-check-label" for="gridRadios4">
+                                              <input class="form-check-input" type="radio" id="D" name="questionnaire" id="gridRadios4" value="D">
+                                              <label class="form-check-label" for="D">
                                                 {{ question.d }}
                                               </label>
                                             </div>
                                           {% endif %}
                                         </div>
-                                      </fieldset>
                                     </h5>
                                   </div>
-                              {% endfor %}
-                            </div>  
-                          </div>
+                              {% endfor %}                            
+                            </form>                         
+                          </div>  
+                        </div>
                           <!-- <img src="assets/student.png" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="height: 120px; width: 120px;">
                           <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Student</h5>
                         </form>
