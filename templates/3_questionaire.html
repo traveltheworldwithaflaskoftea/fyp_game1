@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Iceland&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Game 1</title>
+    <style>
+        body {
+            background: url('https://fyp-game1.s3.amazonaws.com/assets/bckgrnd2.jpg') no-repeat center fixed;
+            background-size: cover;
+        }
+
+        .zoom {
+            transition: transform .2s; /* Animation */
+            width: 200px;
+            height: 900px;
+            margin: 0 auto;
+        }
+
+        .zoom:hover {
+            transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+
+        .questionnaire {
+          text-align:left;
+          line-height: 1.8;
+        }
+
+
+    </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-light bg-light px-3">
+          <a class="navbar-brand mx-0" href="https://endowus.com/">
+              <img src="https://fyp-game1.s3.amazonaws.com/assets/endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
+          </a>
+          <form class="form-inline">
+              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Log In</button>
+          </form>
+      </nav>
+  
+      <div class="py-5">
+          <div class="container px-sm-1">
+              <div class="container p-4 px-5 bg-light rounded-3 text-center">
+                  <div class="m-2 mb-3">
+                      <h3 class="mb-2" style="font-family: 'Bungee', cursive; font-size: 32px;">Get to know yourself better!</h3>
+                      <h6 style="font-family: 'Press Start 2P', cursive; font-size: 12px;  color: grey;">Find out which portfolios suit you best through this questionnaire.</h6> 
+                  </div>  
+                  <div class="card-group">
+                    <div class="container">
+                      <form>
+                          <div class="card">
+                            <div class="container-full-bg">  
+                              {% for question in questions %}
+                                <div class="container m-3">
+                                  <h5 class="questionnaire mb-1" style="font-family: 'Montserrat', sans-serif; font-size: 18px;">
+                                    {{ question.question }}
+                                    <fieldset class="form-group mt-1">
+                                      <div class="row" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                                        <div class="col-sm-10">
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                            <label class="form-check-label" for="gridRadios1">
+                                              {{ question.a }}
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                            <label class="form-check-label" for="gridRadios2">
+                                              {{ question.b }}
+                                            </label>
+                                          </div>
+                                          {% if question.c != "" %}
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                                              <label class="form-check-label" for="gridRadios3">
+                                                {{ question.c }}
+                                              </label>
+                                            </div>
+                                          {% endif %}
+                                          {% if question.d != "" %}
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+                                              <label class="form-check-label" for="gridRadios4">
+                                                {{ question.d }}
+                                              </label>
+                                            </div>
+                                          {% endif %}
+                                        </div>
+                                      </fieldset>
+                                    </h5>
+                                  </div>
+                              {% endfor %}
+                            </div>  
+                          </div>
+                          <!-- <img src="assets/student.png" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="height: 120px; width: 120px;">
+                          <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Student</h5>
+                        </form>
+                        <form class="form-inline">
+                          <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">Preference</label>
+                          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        
+                          <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" id="customControlInline">
+                            <label class="custom-control-label" for="customControlInline" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">Remember my preference</label>
+                          </div> -->
+                        
+                          <button type="submit" class="btn btn-primary btn-lg mt-3 mb-0" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Submit</button>
+                        </form>
+                  </div>
+         <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+       </body>
+
+</html>
