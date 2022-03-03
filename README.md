@@ -11,10 +11,10 @@
 - **Front-End**: HTML, CSS
 - **Back-End**: Python Flask
 - **Database**: MongoDB Atlas
-- **Testing**: havent implement
+- **Testing**: Postman, Unittest
 - **Continuous Integration (CI)**: GitHub Actions
 - **Continuous Deployment (CD)**: Heroku
-- **Design**: Lucidchart, 
+- **Design**: Miro, Diagrams.net 
 
 ## Directory Layout
 - `.github\workflows` contains the github actions 
