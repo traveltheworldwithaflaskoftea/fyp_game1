@@ -19,7 +19,7 @@
       <title>Game 1</title>
       <style>
         body {
-            background: url('assets/bckgrnd2.jpg') no-repeat center fixed;
+            background: url('https://fyp-game1.s3.amazonaws.com/assets/bckgrnd2.jpg') no-repeat center fixed;
             background-size: cover;
         }
 
@@ -43,55 +43,54 @@
   <body>
     <nav class="navbar navbar-light bg-light px-3">
       <a class="navbar-brand mx-0" href="https://endowus.com/">
-          <img src="assets\endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
+          <img src="https://fyp-game1.s3.amazonaws.com/assets/endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
       </a>
       <form class="form-inline">
           <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Log In</button>
       </form>
     </nav>
-
+   
     <div class="py-5">
       <div class="container px-sm-1">
           <div class="container p-4 px-5 bg-light rounded-3 text-center">
-              <div class="m-2 mb-3">
-                  <h3 style="font-family: 'Bungee', cursive; font-size: 32px;">My Main Financial Goal:</h3>
-              </div>  
-              <div class="card-group">
-                  <div class="card">
-                    <img src="assets/student.png" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="height: 150px; width: 150px;">
-                    <div class="card-body">
-                      <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Student</h5>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="container-full-bg">  
-                      <div class="container"><br>
-                        <h5 class="question" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">
-                          Please select your main financial goal: <br><br><br>
-                          <input type="radio" id="goal1" name="goal">
-                          <label for="goal1">Earn additional (passive) income</label><br><br>
-                          <input type="radio" id="goal2" name="goal">
-                          <label for="goal2">To grow my savings</label><br><br> 
-                          <input type="radio" id="goal3" name="goal">
-                          <label for="goal3">To dabble with investing</label><br><br>
-                          <input type="radio" id="goal4" name="goal">
-                          <label for="goal1">Save up for graduation trip</label><br><br>
-                          <input type="radio" id="goal5" name="goal">
-                          <label for="goal1">Save up for overseas exchange</label><br><br>
-                          <input type="radio" id="goal6" name="goal">
-                          <label for="goal1">Start building an emergency fund</label><br><br>
-                          <input type="radio" id="goal7" name="goal">
-                          <label for="goal1">Start looking at BTO</label><br><br>
-                          <input type="radio" id="goal8" name="goal">
-                          <label for="goal1">Others</label><br><br><br>
-                          <input type="submit" value="Submit">
-                        <br><br>
-                        </h5>
-                      </div>
-                </div>  
+            <div class="m-2 mb-3">
+              <h3 style="font-family: 'Bungee', cursive; font-size: 32px;">My Main Financial Goal:</h3>
+            </div>  
+            <div class="card-group">
+              <div class="card">
+                <img src={{ lifestage.img }} class="card-img-top mx-auto mt-5 zoom" alt="Student" style="height: 150px; width: 150px;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">{{lifestage.name}}</h5>
+                </div>
+              </div>
+              <div class="card mx-auto p-3">
+                <div class="mx-auto p-3">
+                  <h5 class="question" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">
+                    Please select your main goal: <br><br><br>
+                  <label for="goal1" value= {{lifestage.goals["1"]}}>
+                    <input type="radio" id="goal1" name="goal">
+                      {{lifestage.goals["1"]}}
+                  </label><br><br>
+
+                  <label for="goal2" value= {{lifestage.goals["2"]}}>
+                    <input type="radio" id="goal2" name="goal">
+                      {{lifestage.goals["2"]}}
+                  </label><br><br>
+
+                  <label for="goal3" value= {{lifestage.goals["3"]}}>
+                    <input type="radio" id="goal3" name="goal">
+                      {{lifestage.goals["3"]}}
+                  </label><br><br>
+          
+                  <input class="mt-2" type="submit" value="Submit">
+                </h5>
+              </div>
+              </div>
+            </div>
           </div>
       </div>
-  </div>
+    </div>
+   
      <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
