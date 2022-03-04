@@ -5,7 +5,7 @@
 - [Notion](), our home page for the project
 - [Notion](), for planning and use of Kanban Board
 - [GitHub](), for version control
-- Figma, for Low-Fi Prototypes
+- Balasmiq, for Low-Fi Prototypes
 
 ## Application Technologies
 - **Front-End**: HTML, CSS
@@ -14,7 +14,7 @@
 - **Testing**: Postman, Unittest
 - **Continuous Integration (CI)**: GitHub Actions
 - **Continuous Deployment (CD)**: Heroku
-- **Design**: Miro, Diagrams.net 
+- **Design**: Miro, Draw.io
 
 ## Directory Layout
 - `.github\workflows` contains the github actions 
