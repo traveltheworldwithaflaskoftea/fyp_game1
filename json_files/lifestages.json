@@ -1,0 +1,28 @@
+[
+    {
+        "_id": "student", 
+        "img": "https://fyp-game1.s3.amazonaws.com/assets/student.png", 
+        "name": "Student",
+        "income": "Under $5,000", 
+        "goals": { 
+            "1": "Student goal 1", 
+            "2": "Student goal 2",
+            "3": "Student goal 3"
+        },
+        "description": "You are an average student currently staying with your parents. You have many wants but is financially unable to finance them. At the same time, you and your partner have started talking about plans for the future. This means planning for housing, and other various bills that would come along."
+    }, 
+    {
+        "_id": "", 
+        "img": "", 
+        "name": "",
+        "income": "", 
+        "goals": { 
+            "1": " goal 1", 
+            "2": " goal 2",
+            "3": " goal 3"
+        },
+        "description": ""
+    }, 
+
+
+]
