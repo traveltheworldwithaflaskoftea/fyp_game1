@@ -5,24 +5,59 @@
         "name": "Student",
         "income": "Under $5,000", 
         "goals": { 
-            "1": "Student goal 1", 
-            "2": "Student goal 2",
-            "3": "Student goal 3"
+            "1": "Save up for BTO", 
+            "2": "Try out investing",
+            "3": "Pay up student loan"
         },
         "description": "You are an average student currently staying with your parents. You have many wants but is financially unable to finance them. At the same time, you and your partner have started talking about plans for the future. This means planning for housing, and other various bills that would come along."
     }, 
     {
-        "_id": "", 
-        "img": "", 
-        "name": "",
-        "income": "", 
+        "_id": "fresh grad", 
+        "img": "https://fyp-game1.s3.amazonaws.com/assets/freshgrad.png", 
+        "name": "Fresh Grad",
+        "income": "$36,000 ~ $48,000", 
         "goals": { 
-            "1": " goal 1", 
-            "2": " goal 2",
-            "3": " goal 3"
+            "1": "Save up for BTO", 
+            "2": "Try out investing",
+            "3": "Support parents by giving them allowance"
         },
-        "description": ""
+        "description": "You have just graduated from university and started your new job. You are also still living with your parents. Upon graduating, you will need to start paying back your student loans. On top of that, you have gotten a BTO with your fiancée, and worry about your finances."
     }, 
-
-
+    {
+        "_id": "bachelor", 
+        "img": "https://fyp-game1.s3.amazonaws.com/assets/bachelor.png", 
+        "name": "Bachelor",
+        "income": "$84,000 ~ $120,000", 
+        "goals": { 
+            "1": "Purchase a home", 
+            "2": "Reduce taxes",
+            "3": "Support parents by giving them allowance"
+        },
+        "description": "You are a bachelor looking to buy your own home after living with your parents for too long. Being single and having had a stable career, you have no issues with your financial liabilities. You are looking to grow your wealth passively and exponentially. You aim to retire by the age of 55."
+    }, 
+    {
+        "_id": "married man", 
+        "img": "https://fyp-game1.s3.amazonaws.com/assets/married.png", 
+        "name": "Married Man",
+        "income": "$100,000 - $120,000", 
+        "goals": { 
+            "1": "Save for big ticket items (e.g. travel)", 
+            "2": "Reduce taxes",
+            "3": "Planning or providing for kids"
+        },
+        "description": "You are married with no kids, and having saved up over the last few years, you and your partner are looking to renovate your home. With no plans to have kids any time soon, you are considering how your finances should be diversified accordingly, while finding ways to grow your wealth too."
+    }, 
+    {
+        "_id": "family man", 
+        "img": "https://fyp-game1.s3.amazonaws.com/assets/family.png", 
+        "name": "Family Man",
+        "income": "$84,000 ~ $120,000", 
+        "goals": { 
+            "1": "Reduce taxes", 
+            "2": "Generate significant CPF Savings",
+            "3": "Provide for kids"
+        },
+        "description": "You are working in a managerial position. You have two children aged 15 and 18. The workload often keeps you busy and you rarely get to spend time with your children. <br><br> You are also worried about the kids' tertiary education expenses (University, Overseas Trips). Motivated to retire early, you are working hard to achieve that goal."
+    }
+    
 ]
