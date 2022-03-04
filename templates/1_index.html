@@ -87,8 +87,7 @@
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Log In</button>
         </form>
     </nav>
-
-    <div class="py-5">
+     <div class="py-5">
         <div class="container px-sm-1">
             <div class="container p-4 px-5 bg-light rounded-3 text-center">
                 <div class="m-2 mb-3">
@@ -97,127 +96,34 @@
                 </div> 
                 <!-- Characters Row 1-->
                 <div class="card-group">
+                  {% set id = ["student", "fresh grad", "bachelor", "married man", "family man"] %}
+                      {% for lifestage in lifestages %}
+                        {% if lifestage._id in id %}
                     <div class="card">
-                      <a href="https://fyp-game1.s3.amazonaws.com">
-                        <img src="https://fyp-game1.s3.amazonaws.com/assets/student.png" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="width: auto; height: 100px">
-                      </a>
-                      
+                        <img src="{{ lifestage.img }}" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="width: auto; height: 100px">
                       <!-- on hover show description -->
                       <div class="cover">
-                        <h3 class="name" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Student Description</h3><br>
-                        <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">You are an average student currently staying with 
-                          your parents. You have many ‘wants’, but lack the money required to fulfil them. 
-                        <br><br>
-                          You and your partner have started considering your plans for the future. This means planning for housing, and the other various bills that would come along.</p>
+                        <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">{{ lifestage.description }}</p>
                           <button type="button" class="btn btn-secondary" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Select</button><br>
-                        
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Student</h5><br>                   
+                        <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">{{ lifestage.name }}</h5><br>                   
                           <h5 class="annual-income" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Annual Income: </h5> 
-                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">Under $5,000 <br></p>
+                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.income }} <br></p>
                           <h5 class="goals" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Goals: </h5>
-                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">Earn additional income <br> Try out investing </p>
+                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.goals.1 }}</p>
+                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.goals.2 }}</p>
+                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.goals.3 }}</p>
                       </div>
                     </div>
-                    <div class="card">
-                      <a href="https://fyp-game1.s3.amazonaws.com">
-                        <img src="https://fyp-game1.s3.amazonaws.com/assets/freshgrad.png" class="card-img-top mx-auto mt-5 zoom" alt="Fresh Grad" style="width: auto; height: 100px">
-                      </a>
-                      
-                      <!-- on hover description -->
-                      <div class="cover">
-                        <h3 class="name" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Fresh Grad Description</h3><br>
-                        <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">You have just graduated from university and started 
-                          your new job. You are also still living with your parents. <br><br> Upon graduating, you will need to start paying back your student loans. 
-                          On top of that, you have gotten a BTO with your 
-                          fiancée, and worry about your finances.</p>
-                        <button type="button" class="btn btn-secondary" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Select</button><br>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Fresh Grad</h5><br>
-                          <h5 class="annual-income" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Annual Income: </h5> 
-                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">$36,000 ~ $48,000 <br></p>
-                          <h5 class="goals" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Goals: </h5>
-                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">Pay back student loans <br> Save up for big ticket purchases <br> (e.g. a car, house)</p>
-                      </div>
-                      
+                    {% endif %}
+                    {% endfor %}
                     </div>
-                    <div class="card">
-                      <a href="https://fyp-game1.s3.amazonaws.com">
-                        <img src="https://fyp-game1.s3.amazonaws.com/assets/bachelor.png" class="card-img-top mx-auto mt-5 zoom" alt="Bachelor" style="width: auto; height: 100px">
-                      </a>
-                
-                        <!-- on hover description -->
-                        <div class="cover">
-                          <h3 class="name" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Bachelor Description</h3><br>
-                          <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">You are a bachelor looking to buy your own home after living 
-                            with your parents for too long. Being single and having had a stable career, you have no issues with your
-                            financial liabilities. <br><br> You are looking to grow your wealth passively and exponentially. You aim to retire by 
-                            the age of 55. </p>
-                          <button type="button" class="btn btn-secondary" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Select</button><br>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Bachelor</h5><br>
-                          <h5 class="annual-income" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Annual Income: </h5> 
-                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">$84,000 ~ $120,000 <br></p>
-                          <h5 class="goals" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Goals: </h5>
-                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">Own your own home <br> Give parents a comfortable life after retirement </p>
-                        </div>
-                       
-                    </div>
-                  </div>  
-
-                <!-- Characters Row 2-->
-                <div class="card-group">
-                    <div class="card">
-                      <a href="https://fyp-game1.s3.amazonaws.com">
-                        <img src="https://fyp-game1.s3.amazonaws.com/assets/married.png" class="card-img-top mx-auto mt-5 zoom" alt="Married Couple" style="width: auto; height: 100px">
-                      </a>
+              </div>
+          </div>
+      </div>
+  </div>
  
-                         <!-- on hover description -->
-                        <div class="cover">
-                          <h3 class="name" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Married Couple Description</h3><br>
-                          <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">You are married with no kids, and having saved up over the last few years, you and your partner are looking to renovate your home. 
-                            <br><br> With no plans to have kids any time soon, you are considering how your finances should be 
-                            diversified accordingly, while finding ways to grow your wealth too.</p>
-                          <button type="button" class="btn btn-secondary" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Select</button><br>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Married Couple (no kids)</h5><br>
-                          <h5 class="annual-income" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Annual Income: </h5> 
-                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">$100,000 - $120,000 <br></p>
-                          <h5 class="goals" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Goals: </h5>
-                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">Grow your wealth <br>House Downpayment, Renovation <br> </p>
-                   
-                        </div>
-                    </div>
-                    <div class="card">
-                      <a href="https://fyp-game1.s3.amazonaws.com">
-                        <img src="https://fyp-game1.s3.amazonaws.com/assets/family.png" class="card-img-top mx-auto mt-5 zoom" alt="Family Man" style="width: auto; height: 100px">
-                      </a>
- 
-                        
-                        <!-- on hover description -->
-                        <div class="cover">
-                          <h3 class="name" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Family Man Description</h3><br>
-                          <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">You are working in a managerial position. You have two children aged 15 and 18. The workload often keeps you busy 
-                            and you rarely get to spend time with your children. <br><br> You are also worried about the kids' tertiary education expenses (University, Overseas Trips). Motivated to retire 
-                            early, you are working hard to achieve that goal.</p>
-                          <button type="button" class="btn btn-secondary" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Select</button><br>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Family Man</h5><br>
-                          <h5 class="annual-income" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Annual Income: </h5> 
-                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">$100,000 - $120,000 <br></p>
-                          <h5 class="goals" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Goals: </h5>
-                          <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;"> Retire early <br> Save for kids' tertiary education</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
        <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
