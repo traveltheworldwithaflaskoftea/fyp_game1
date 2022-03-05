@@ -76,21 +76,21 @@
                                         <div class="col-sm-10">
                                           <div class="form-check">
                                             <!-- For form validation: Need to change name to be specific to each -->
-                                            <input class="form-check-input" type="radio" id="A" name= questionnaire 
-                                            value="A" checked>
+                                            <input class="form-check-input" name = "{{ question.question }}" type="radio" id="A" name= questionnaire 
+                                            value="A">
                                             <label class="form-check-label" for="A">
                                               {{ question.a }}
                                             </label>
                                           </div>
                                           <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="B" name="questionnaire" value="B">
+                                            <input class="form-check-input" name = "{{ question.question }}" type="radio" id="B" name="questionnaire" value="B">
                                             <label class="form-check-label" for="B">
                                               {{ question.b }}
                                             </label>
                                           </div>
                                           {% if question.c != "" %}
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" id="C" name="questionnaire" id="gridRadios3" value="C">
+                                              <input class="form-check-input" name = "{{ question.question }}" type="radio" id="C" name="questionnaire" id="gridRadios3" value="C">
                                               <label class="form-check-label" for="C">
                                                 {{ question.c }}
                                               </label>
@@ -98,7 +98,7 @@
                                           {% endif %}
                                           {% if question.d != "" %}
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" id="D" name="questionnaire" id="gridRadios4" value="D">
+                                              <input class="form-check-input" name = "{{ question.question }}" type="radio" id="D" name="questionnaire" id="gridRadios4" value="D">
                                               <label class="form-check-label" for="D">
                                                 {{ question.d }}
                                               </label>
