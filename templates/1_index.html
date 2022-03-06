@@ -96,9 +96,9 @@
                 </div> 
                 <!-- Characters Row 1-->
                 <div class="card-group">
-                  {% set id = ["student", "fresh grad", "bachelor", "married man", "family man"] %}
+                    {% set id_row1 = ["student", "fresh grad", "bachelor"] %}
                       {% for lifestage in lifestages %}
-                        {% if lifestage._id in id %}
+                        {% if lifestage._id in id_row1 %}
                     <div class="card">
                         <img src="{{ lifestage.img }}" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="width: auto; height: 100px">
                       <!-- on hover show description -->
@@ -119,6 +119,32 @@
                     {% endif %}
                     {% endfor %}
                     </div>
+                <!-- Characters Row 2-->
+                <div class="card-group">
+                    {% set id_row2 = ["married man", "family man"] %}
+                        {% for lifestage in lifestages %}
+                          {% if lifestage._id in id_row2 %}
+                      <div class="card">
+                          <img src="{{ lifestage.img }}" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="width: auto; height: 100px">
+                        <!-- on hover show description -->
+                        <div class="cover">
+                          <p class="title" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">{{ lifestage.description }}</p>
+                            <button type="button" class="btn btn-secondary" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Select</button><br>
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">{{ lifestage.name }}</h5><br>                   
+                            <h5 class="annual-income" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Annual Income: </h5> 
+                            <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.income }} <br></p>
+                            <h5 class="goals" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Goals: </h5>
+                            <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.goals.1 }}</p>
+                            <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.goals.2 }}</p>
+                            <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.goals.3 }}</p>
+                        </div>
+                      </div>
+                      {% endif %}
+                      {% endfor %}
+                      </div>
+                  </div>
               </div>
           </div>
       </div>
