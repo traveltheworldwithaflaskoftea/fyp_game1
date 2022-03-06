@@ -150,7 +150,7 @@
     "icon": "https://assets-global.website-files.com/61263092cb…2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e53ba1d0a5270b0faa6_Global%20Real%20Estate.png",   
     "name": "Global Real Estate", 
-    "details": "Invest in global real estate and infrastructure to earn high dividend income and capital appreciation",
+    "details": "Earn high dividend income and capital appreciation",
     "source": "Cash",    
     "risk": "High risk", 
     "link": "https://endowus.com/satellite/global-real-estate"
@@ -162,7 +162,7 @@
     "icon": "https://assets-global.website-files.com/61263092cb…2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e0d0bb0d27532efb31a_Technology.png",   
     "name": "Technology", 
-    "details": "Gain exposure to the world's most technologically innovative companies",
+    "details": "World's most technologically innovative companies",
     "source": "Cash",    
     "risk": "High risk", 
     "link": "https://endowus.com/satellite/technology"
@@ -171,10 +171,10 @@
 {
     "_id": "china_e", 
     "type": "Satellite",
-    "icon": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e49a796fe3c40c8a118_China%20Equities.png", 
+    "icon": "https://assets-global.website-files.com/61263092cb…2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e49a796fe3c40c8a118_China%20Equities.png",   
     "name": "China Equities", 
-    "details": "Capture China's high growth potential by investing in its best companies listed onshore and offshore",
+    "details": "Best China companies listed onshore and offshore",
     "source": "Cash",    
     "risk": "High risk", 
     "link": "https://endowus.com/satellite/china-equities"
@@ -183,10 +183,10 @@
 {
     "_id": "china_fi", 
     "type": "Satellite",
-    "icon": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e49a796fe3c40c8a118_China%20Equities.png", 
+    "icon": "https://assets-global.website-files.com/61263092cb…2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e3faa6c8c9ebcce317a_China%20FI.png",   
     "name": "China Fixed Income", 
-    "details": "Diversify via exposure to China's onshore and offshore corporate and government bonds",
+    "details": "China's corporate and government bonds",
     "source": "Cash",    
     "risk": "Low risk", 
     "link": "https://endowus.com/satellite/china-fixed-income"
@@ -195,10 +195,10 @@
 {
     "_id": "megatrends", 
     "type": "Satellite",
-    "icon": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e49a796fe3c40c8a118_China%20Equities.png", 
+    "icon": "https://assets-global.website-files.com/61263092cb…2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e60a2b1dfffa7c4bf5d_Megatrends.png",   
     "name": "Megatrends", 
-    "details": "Get ahead of economic shifts and invest in future-driven themes like healthcare, clean energy, and AI",
+    "details": "Future-driven themes like healthcare, clean energy, and AI",
     "source": "Cash",    
     "risk": "High risk", 
     "link": "https://endowus.com/satellite/megatrends"
@@ -207,10 +207,10 @@
 {
     "_id": "low_vfi", 
     "type": "Satellite",
-    "icon": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e49a796fe3c40c8a118_China%20Equities.png", 
+    "icon": "https://assets-global.website-files.com/61263092cb…2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e35849b800fdeb143e9_Low%20Volatility%20FI.png",   
     "name": "Low Volatility Fixed Income", 
-    "details": "Invest in a low-volatility portfolio that is more defensive than traditional fixed income",
+    "details": "More defensive than traditional fixed income",
     "source": "Cash",    
     "risk": "Low risk", 
     "link": "https://endowus.com/satellite/low-volatility-fixed-income"
