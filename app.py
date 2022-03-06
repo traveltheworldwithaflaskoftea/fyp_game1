@@ -23,7 +23,7 @@ def getAllLifestages():
         # return JSONEncoder().encode(lifestages), 200
 
         #Use these 2 lines when visualizing on page
-        lifestages = mongo.db.lifestage.find()
+        lifestages = list(mongo.db.lifestage.find())
         return render_template("1_index.html", lifestages = lifestages), 200
     except Exception as e: 
         return dumps({'error': str(e)})
@@ -31,7 +31,7 @@ def getAllLifestages():
 
 #Select goal page
 @app.route('/goal')
-def goalsPage():
+def getGoals():
     return render_template('2_goal.html'), 200
 
 @app.route('/goal/<id>')
@@ -47,7 +47,7 @@ def getOneLifestage(id):
 @app.route('/questionnaire')
 def getAllQuestions(): 
     try:
-        questions = mongo.db.questionaire.find()
+        questions = list(mongo.db.questionaire.find())
         return render_template("3_questionnaire.html", questions = questions), 200
 
         #Check for correct extraction from DB
@@ -57,8 +57,8 @@ def getAllQuestions():
         return dumps({'error': str(e)})
 
 #Tolerance Page 
-@app.route('/tolerance')
-def resultsPage(): 
+@app.route('/result')
+def getResult(): 
     return render_template('4_result.html'), 200
 
 #Recommend Page
