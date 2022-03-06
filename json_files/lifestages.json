@@ -12,7 +12,7 @@
         "description": "You are an average student currently staying with your parents. You have many wants but is financially unable to finance them. At the same time, you and your partner have started talking about plans for the future. This means planning for housing, and other various bills that would come along."
     }, 
     {
-        "_id": "fresh grad", 
+        "_id": "fresh_grad", 
         "img": "https://fyp-game1.s3.amazonaws.com/assets/freshgrad.png", 
         "name": "Fresh Grad",
         "income": "$36,000 ~ $48,000", 
@@ -36,7 +36,7 @@
         "description": "You are a bachelor looking to buy your own home after living with your parents for too long. Being single and having had a stable career, you have no issues with your financial liabilities. You are looking to grow your wealth passively and exponentially. You aim to retire by the age of 55."
     }, 
     {
-        "_id": "married man", 
+        "_id": "married_man", 
         "img": "https://fyp-game1.s3.amazonaws.com/assets/married.png", 
         "name": "Married Man",
         "income": "$100,000 - $120,000", 
@@ -48,7 +48,7 @@
         "description": "You are married with no kids, and having saved up over the last few years, you and your partner are looking to renovate your home. With no plans to have kids any time soon, you are considering how your finances should be diversified accordingly, while finding ways to grow your wealth too."
     }, 
     {
-        "_id": "family man", 
+        "_id": "family_man", 
         "img": "https://fyp-game1.s3.amazonaws.com/assets/family.png", 
         "name": "Family Man",
         "income": "$100,000 - $120,000", 
