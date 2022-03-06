@@ -44,11 +44,11 @@ def getOneLifestage(id):
         return dumps({'error': str(e)})
 
 #Questionaire page 
-@app.route('/questionaire')
+@app.route('/questionnaire')
 def getAllQuestions(): 
     try:
         questions = mongo.db.questionaire.find()
-        return render_template("3_questionaire.html", questions = questions), 200
+        return render_template("3_questionnaire.html", questions = questions), 200
 
         #Check for correct extraction from DB
         # questions = list(mongo.db.questionaire.find())
