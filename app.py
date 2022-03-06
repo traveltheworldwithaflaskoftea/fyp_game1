@@ -57,6 +57,9 @@ def getAllQuestions():
         return dumps({'error': str(e)})
 
 #Tolerance Page 
+@app.route('/tolerance')
+def getAllResults(): 
+    return render_template('4_result.html'), 200
 
 #Recommend Page
 @app.route('/recommendation')
