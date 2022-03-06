@@ -58,7 +58,7 @@ def getAllQuestions():
 
 #Tolerance Page 
 @app.route('/tolerance')
-def getAllResults(): 
+def resultsPage(): 
     return render_template('4_result.html'), 200
 
 #Recommend Page
