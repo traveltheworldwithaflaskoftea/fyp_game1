@@ -30,7 +30,7 @@
     <title>Recommended Portfolios</title>
     <style>
         body {
-            background: url('assets/bckgrnd2.jpg') no-repeat center fixed;
+            background: url('https://fyp-game1.s3.amazonaws.com/assets/bckgrnd2.jpg') no-repeat center fixed;
             background-size: cover;
         }
 
@@ -52,7 +52,7 @@
     <!--Header-->
     <nav class="navbar navbar-light bg-light px-3">
         <a class="navbar-brand mx-0" href="https://endowus.com/">
-            <img src="assets\endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
+            <img src="https://fyp-game1.s3.amazonaws.com/assets/endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
         </a>
         <form class="form-inline">
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Log In</button>
@@ -68,8 +68,8 @@
                 </div> 
                 <!-- Card group-->
                 <div class="card-group" id="card_rs">
-                  {% set id = ["flagship_80", "esg_0", "china_e"] %}
-                  {% for portfolio in portfolios: %}
+                  {% set id = ["flagship_20", "esg_0", "china_fi"] %}
+                  {% for portfolio in portfolios %}
                     {% if portfolio._id in id %}
                       <div class="card border-flush">
                         <div class="card-header" style="font-size:14px;">
@@ -92,7 +92,10 @@
                     {% endif %}
                   {% endfor %}
                   </div>
-                  <button class="mt-3"><a href="https://endowus.com/app/login">Invest now!😉</a></button>
+                  <a href="https://endowus.com/app/login">
+                    <button class="btn btn-secondary btn-lg mt-3 mb-0" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Invest now!</button>
+                  </a>
+                  
             </div>
         </div>
     </div>

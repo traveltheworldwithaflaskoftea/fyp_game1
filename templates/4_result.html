@@ -19,7 +19,7 @@
     <title>Game 1</title>
     <style>
         body {
-            background: url('assets/bckgrnd2.jpg') no-repeat center fixed;
+            background: url('https://fyp-game1.s3.amazonaws.com/assets/bckgrnd2.jpg') no-repeat center fixed;
             background-size: cover;
         }
 
@@ -40,7 +40,7 @@
   <body>
     <nav class="navbar navbar-light bg-light px-3">
         <a class="navbar-brand mx-0" href="https://endowus.com/">
-            <img src="assets\endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
+            <img src="https://fyp-game1.s3.amazonaws.com/assets/endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
         </a>
         <form class="form-inline">
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Log In</button>
@@ -57,18 +57,20 @@
                 <!-- Characters Row 1-->
                 <div class="card-group" style=" height: 25rem;">
                     <div class="card">
-                      <img src="assets/student.png" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="height: 200px; width: 200px;">
+                      <img src="https://fyp-game1.s3.amazonaws.com/assets/student.png" class="card-img-top mx-auto mt-5 zoom" alt="Student" style="height: 200px; width: 200px;">
                       <div class="card-body align-items-center d-flex justify-content-center">
                         <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">Student</h5>
                       </div>
                     </div>
                     <div class="card">
                       <div class="card-body align-items-center d-flex justify-content-center">
-                        <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">You have a HIGH risk tolerance!</h5>
+                        <p class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px; text-align: left;"> 1. You have a <span style="background-color: #c0e7c0">LOW</span> risk tolerance <br><br> 2. You are interested in <span style="background-color: #c0e7c0">Sustainable Investing</span></p>
                       </div>
                     </div>
+                    
                      
                   </div>  
+                  <button onclick="window.location.href='http://127.0.0.1:5000/recommendation';" type="submit" class="btn btn-secondary btn-lg mt-3 mb-0" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Recommendations</button>
             </div>
         </div>
     </div>

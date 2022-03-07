@@ -14,25 +14,66 @@ mongo = PyMongo(app)
 def test():
     return "App is working perfectly"
 
+#Index Page Functions 
 @app.route('/')
-def firstpage():
-    return render_template('pick_char.html')
+def getAllLifestages():
+    try:
+        #Use these 2 lines when checking on Postman
+        # lifestages = list(mongo.db.lifestage.find())
+        # return JSONEncoder().encode(lifestages), 200
 
+        #Use these 2 lines when visualizing on page
+        lifestages = list(mongo.db.lifestage.find())
+        return render_template("1_index.html", lifestages = lifestages), 200
+    except Exception as e: 
+        return dumps({'error': str(e)})
+
+
+#Select goal page
+@app.route('/goal')
+def getGoals():
+    return render_template('2_goal.html'), 200
+
+@app.route('/goal/<id>')
+def getOneLifestage(id): 
+    try:
+        lifestage = mongo.db.lifestage.find_one_or_404({"_id": id})
+        return render_template("2_goal.html", lifestage = lifestage), 200
+        #return JSONEncoder().encode(goals), 200
+    except Exception as e: 
+        return dumps({'error': str(e)})
+
+#Questionaire page 
+@app.route('/questionnaire')
+def getAllQuestions(): 
+    try:
+        questions = list(mongo.db.questionaire.find())
+        return render_template("3_questionnaire.html", questions = questions), 200
+
+        #Check for correct extraction from DB
+        # questions = list(mongo.db.questionaire.find())
+        # return JSONEncoder().encode(questions), 200
+    except Exception as e: 
+        return dumps({'error': str(e)})
+
+#Tolerance Page 
+@app.route('/result')
+def getResult(): 
+    return render_template('4_result.html'), 200
+
+#Recommend Page
 @app.route('/recommendation')
 def getAllPortfolios(): 
     try:
         portfolios = mongo.db.portfolio.find()
-        return render_template("recommend.html", portfolios = portfolios), 200
+        return render_template("5_rec.html", portfolios = portfolios), 200
     except Exception as e: 
         return dumps({'error': str(e)})
 
 @app.route('/recommendation/<id>')
 def getOnePortfolio(id): 
-    try:
-        portfolio = mongo.db.portfolio.find_one_or_404({"_id": id})
-        return render_template("recommend.html", portfolio = portfolio), 200
-    except Exception as e: 
-        return dumps({'error': str(e)})
+    portfolio = mongo.db.portfolio.find_one_or_404({"_id": id})
+    return JSONEncoder().encode(portfolio), 200
 
 if __name__ == '__main__':
     app.run(debug=True)

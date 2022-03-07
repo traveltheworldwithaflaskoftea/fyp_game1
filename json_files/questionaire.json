@@ -1,0 +1,51 @@
+[
+    {
+        "_id": "q1", 
+        "question": "Q1. You are on a TV game show and can choose one of the following. Which would you take?",
+        "a": "$1,000 in cash", 
+        "b": "A 50% chance at winning $5,000",
+        "c": "A 25% chance at winning $10,000",    
+        "d": "A 5% chance at winning $100,000"
+    }, 
+    {
+        "_id": "q2", 
+        "question": "Q2. Given the best and worst case returns of the four investment choices below, which would you prefer?",  
+        "a": "$200 gain best case; $0 gain/loss worst case", 
+        "b": "$800 gain best case; $200 loss worst case",
+        "c": "$2,600 gain best case; $800 loss worst case",    
+        "d": "$4,800 gain best case; $2,400 loss worst case"
+    }, 
+    {
+        "_id": "q3", 
+        "question": "Q3. In addition to whatever you own, you have been given $1,000. You are now asked to choose between:",  
+        "a": "100% sure gain of $500", 
+        "b": "60% chance to gain $800", 
+        "c": "40% chance to gain $1,000", 
+        "d": "20% chance to gain $1,500"
+    }, 
+    {
+        "_id": "q4", 
+        "question": "Q4. If you had to invest $20,000, which of the following investment choices would you find most appealing?",  
+        "a": "80% in low-risk investments 20% in medium-risk investments 0% in high-risk investments", 
+        "b": "60% in low-risk investments 30% in medium-risk investments 10% in high-risk investments",
+        "c": "30% in low-risk investments 40% in medium-risk investments 30% in high-risk investments", 
+        "d": "10% in low-risk investments 40% in medium-risk investments 50% in high-risk investments"
+    }, 
+    {
+        "_id": "q5", 
+        "question": "Q5. Your trusted friend, an expert in software development, is creating the next unicorn consumer tech startup. The venture could pay back 50 to 100 times the investment if successful. If the startup fails, the entire investment is worthless. Your friend estimates the chance of success is only 20%. If you had the money, how much would you invest?",  
+        "a": "Nothing", 
+        "b": "One month’s salary",
+        "c": "Three months’ salary",    
+        "d": "Six months’ salary"
+    }, 
+    {
+        "_id": "q6", 
+        "question": "Q6. Are you interested in sustainable investing?",  
+        "a": "Yes", 
+        "b": "No", 
+        "c": "", 
+        "d": ""
+    }   
+
+]
