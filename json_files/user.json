@@ -1,0 +1,18 @@
+[
+    {
+        "_id": "user1", 
+        "email": "jessieng2103@gmail.com",
+        "name": "Jessie",
+        "lifestage": "student", 
+        "recommendations": ["flagship_60", "esg_40", "china_fi"],
+        "risk_tolerance": "moderate"
+    }, 
+    {
+        "_id": "user2",
+        "email": "tantham@gmail.com", 
+        "name": "Tantham",
+        "lifestage": "fresh_grad", 
+        "recommendations": ["flagship_100", "esg_80", "megatrends"],
+        "risk_tolerance": "high"
+    }
+]
