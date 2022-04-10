@@ -46,6 +46,46 @@ def getOneLifestage(id):
     except Exception as e: 
         return dumps({'error': str(e)})
 
+#Receive and Store goal for user
+@app.route('/saveGoal', methods=['POST'])
+def saveGoal():
+    # Simple check of input format and data of the request are JSON
+    if request.is_json:
+        try:
+            result = request.get_json()
+            print("\nReceived result in JSON:",
+                  result)
+            lifestage = result["lifestage"]
+            goal_num = result["goal"]
+            print(lifestage, goal_num)
+            lifestage_data = mongo.db.lifestage.find_one_or_404({"_id": lifestage})
+            goal = lifestage_data["goals"][goal_num]
+            values = {
+                "lifestage": lifestage, 
+                "goal": goal
+            }
+            
+            data = mongo.db.user.find_one_and_update(
+                {"_id": user},
+                {"$set": values},
+                return_document=ReturnDocument.AFTER,
+            )
+            return JSONEncoder().encode(data), 200
+
+        except Exception as e:
+            return jsonify({
+                "code": 404,
+                "message": str(e)
+            }), 404
+
+    # if reached here, not a JSON request.
+    return jsonify({
+        "code": 400,
+        "message": "Invalid JSON input: " + str(request.get_data()),
+        "test": str(request.is_json)
+    }), 400
+
+
 #Questionaire page 
 @app.route('/questionnaire')
 def getAllQuestions(): 
@@ -59,7 +99,7 @@ def getAllQuestions():
     except Exception as e: 
         return dumps({'error': str(e)})
 
-#Send risk tolerance & sustainability indication
+#Receive and Store risk tolerance & sustainability indication
 @app.route('/storeResult', methods=['POST'])
 def storeResult():
     # Simple check of input format and data of the request are JSON

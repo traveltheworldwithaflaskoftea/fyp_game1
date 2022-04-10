@@ -60,30 +60,30 @@
             <div class="card-group">
               <div class="card">
                 <img src={{ lifestage.img }} class="card-img-top mx-auto mt-5 zoom" alt="Student" style="height: 150px; width: 150px;">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">{{lifestage.name}}</h5>
+                <div class="card-body" id="lifestage">
+                  <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;" >{{lifestage.name}}</h5>
                 </div>
               </div>
               <div class="card mx-auto p-3">
                 <div class="mx-auto p-3">
                   <h5 class="question" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">
                     Please select your main goal: <br><br><br>
-                  <label for="goal1" value= {{ lifestage.goals["1"] }}>
-                    <input type="radio" id="goal1" name="goal">
+                  <label for="goal1">
+                    <input type="radio" id="goal1" name="goal" value= 1>
                       {{lifestage.goals["1"]}}
                   </label><br><br>
 
-                  <label for="goal2" value= {{lifestage.goals["2"]}}>
-                    <input type="radio" id="goal2" name="goal">
+                  <label for="goal2">
+                    <input type="radio" id="goal2" name="goal" value=2>
                       {{lifestage.goals["2"]}}
                   </label><br><br>
 
-                  <label for="goal3" value= {{lifestage.goals["3"]}}>
-                    <input type="radio" id="goal3" name="goal">
+                  <label for="goal3">
+                    <input type="radio" id="goal3" name="goal" value=3>
                       {{lifestage.goals["3"]}}
                   </label><br><br>
           
-                  <button onclick="window.location.href='http://127.0.0.1:5000/questionnaire';" class="btn btn-secondary btn-lg mt-3 mb-0" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">Submit</button>
+                  <button onclick="saveGoal()" id="button" value= {{ lifestage._id }} class="btn btn-secondary btn-lg mt-3 mb-0" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">Submit</button>
                 </h5>
               </div>
               </div>
@@ -91,6 +91,47 @@
           </div>
       </div>
     </div>
+
+    <script>
+      async function saveGoal() {
+        // Retrieve form input in your javascript
+        var lifestage = document.getElementById("button").value
+        var goal = document.querySelector('input[type=radio][name=goal]:checked').value;
+        //console.log(lifestage, goal);
+        var json_file = {
+            "goal": goal, 
+            "lifestage": lifestage
+        };
+        var serviceURL = "http://127.0.0.1:5000/saveGoal";
+
+        //for error handling 
+        try {
+            // POST have different way of arranging the fetch
+            const response =
+                await fetch(
+                    serviceURL, {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/json" }, body: JSON.stringify(json_file)
+                });
+
+              // response.json is to parse the response data as JSON into objects so that we can use it 
+              const result = await response.json();
+              if (response.status === 200) {
+                console.log("success");
+              } else if (response.status == 404) {
+                  console.log(result.message);
+              } else {
+                  // unexpected outcome, throw the error
+                  throw response.status;
+              }
+          } catch (error) {
+              // Errors when calling the service; such as network error, 
+              // service offline, etc
+              console.log('There is a problem with request, please try again later.<br />' + error);
+          } // error
+        return window.location.href='http://127.0.0.1:5000/questionnaire';
+      };
+    </script>
    
      <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -57,69 +57,6 @@ details    <!-- Bootstrap CSS -->
       </nav>
 
       <div class="py-5">
-<<<<<<< Updated upstream
-          <div class="container px-sm-1">
-              <div class="container p-4 px-5 bg-light rounded-3 text-center">
-                  <div class="m-2 mb-3">
-                      <h3 class="mb-2" style="font-family: 'Bungee', cursive; font-size: 32px;">Get to know yourself better!</h3>
-                      <h6 style="font-family: 'Press Start 2P', cursive; font-size: 12px;  color: grey;">Find out which portfolios suit you best through this questionnaire.</h6> 
-                  </div>  
-
-                  <div class="card-group">
-                    <div class="container">
-                      <div class="card">
-                        <div class="container-full-bg">  
-                          <form action = "http://127.0.0.1:5000/questionnaire_result" method = "post">
-                            {% for question in questions %}
-                            <div class="container m-3">
-                              <h5 class="questionnaire mb-1" style="font-family: 'Montserrat', sans-serif; font-size: 18px;">
-                                {{ question.question }}
-                                  <div class="row" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
-                                    <div class="col-sm-10">
-                                      <div class="form-check">
-                                        <!-- For form validation: Need to change name to be specific to each -->
-                                        <input class="form-check-input" name = "{{ question._id }}" type="radio" id="{{ question.a }}" 
-                                        value="A">
-                                        <label class="form-check-label" for="{{ question.a }}" value="A">
-                                          {{ question.a }}
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" name = "{{ question._id }}" type="radio" id="{{ question.b }}" value="B">
-                                        <label class="form-check-label" for="{{ question.b }}" value="B">
-                                          {{ question.b }}
-                                        </label>
-                                      </div>
-                                      {% if question.c != "" %}
-                                        <div class="form-check">
-                                          <input class="form-check-input" name = "{{ question._id }}" type="radio" id="{{ question.c }}" id="gridRadios3" value="C">
-                                          <label class="form-check-label" for="{{ question.c }}" value="C">
-                                            {{ question.c }}
-                                          </label>
-                                        </div>
-                                      {% endif %}
-                                      {% if question.d != "" %}
-                                        <div class="form-check">
-                                          <input class="form-check-input" name = "{{ question._id }}" type="radio" id="{{ question.d }}" id="gridRadios4" value="D">
-                                          <label class="form-check-label" for="{{ question.d }}" value="D">
-                                            {{ question.d }}
-                                          </label>
-                                        </div>
-                                      {% endif %}
-                                    </div>
-                                </h5>
-                              </div>
-                          {% endfor %}
-                          <button id="submit" type="submit" class="btn btn-secondary btn-lg mx-1 mb-2" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Submit</button>    
-                        </form>       
-                      </div>               
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-=======
         <div class="container px-sm-1">
           <div class="container p-4 px-5 bg-light rounded-3 text-center">
             <div class="m-2 mb-3">
@@ -331,23 +268,6 @@ details    <!-- Bootstrap CSS -->
         </div>
       </div>
       <script>
-        // function calRisk() {
-        //   var q1 = document.querySelector('input[type=radio][name=q1]:checked').value;
-        //   var q2 = document.querySelector('input[type=radio][name=q2]:checked').value;
-        //   var q3 = document.querySelector('input[type=radio][name=q3]:checked').value;
-        //   var q4 = document.querySelector('input[type=radio][name=q4]:checked').value;
-        //   var q5 = document.querySelector('input[type=radio][name=q5]:checked').value;
-        //   var array = [q1, q2, q3, q4, q5]; 
-        //   // console.log(array); 
-
-        //   //Insert risk tabulation here 
-        //   var risk_tolerance = "High";
-        //   var sustainability = document.querySelector('input[type=radio][name=q6]:checked').value;
-        //   // console.log(sustainability); 
-        //   // return [risk, sustainability]; 
-        // }
-
-        // Add room services into cart
         async function calRisk() {
           // Retrieve form input in your javascript
           var q1 = document.querySelector('input[type=radio][name=q1]:checked').value;
@@ -400,33 +320,13 @@ details    <!-- Bootstrap CSS -->
             } // error
           return window.location.href='http://127.0.0.1:5000/result';
         };
-
-        
       </script>
 
->>>>>>> Stashed changes
          <!-- Optional JavaScript -->
           <!-- jQuery first, then Popper.js, then Bootstrap JS -->
           <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<<<<<<< Updated upstream
-       </body>
-       
-       <script> 
-          answers = []; 
-          qns = ["q1", "q2", "q3", "q4", "q5"]; 
-          document.getElementById('submit').onclick = function() {
-            for (qn in qns){
-              var form = document.forms.qn; 
-              var selected = form.querySelector('input[name=qn]:checked');
-              alert(selected); 
-              console.log(selected.value); 
-            }
-          }     
-      </script>
-=======
   </body>
->>>>>>> Stashed changes
 
 </html>
