@@ -12,7 +12,7 @@ CORS(app)
 app.config["MONGO_URI"] = "mongodb+srv://fyp1:RacH3nBu9ER2NW2o@clusterfyp.dwacg.mongodb.net/Game1?retryWrites=true&w=majority"
 mongo = PyMongo(app)
 # Need to make user dynamic !! and save it here 
-user = "user1"
+user = "user3"
 
 @app.route('/test')
 def test():
@@ -133,8 +133,13 @@ def storeResult():
 def getResult(): 
     try:
         user_data = mongo.db.user.find_one_or_404({"_id": user})
+        lifestage = user_data["lifestage"]
+        lifestage_data = mongo.db.lifestage.find_one_or_404({"_id": lifestage})
+        img = lifestage_data["img"]
+        name = lifestage_data["name"]
+        print(img, name)
         # return JSONEncoder().encode(user_data), 200
-        return render_template("4_result.html", user_data = user_data), 200
+        return render_template("4_result.html", user_data = user_data, name = name, img = img), 200
     except Exception as e: 
         return dumps({'error': str(e)})
 
