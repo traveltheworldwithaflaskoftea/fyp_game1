@@ -101,6 +101,19 @@ def getOneLifestage(id):
         return dumps({'error': str(e)})
 
 #Questionaire page 
+# @app.route('/questionnaire')
+# def getAllQuestions(): 
+#     try:
+#         questions = list(mongo.db.questionaire.find())
+#         return render_template("3_questionnaire.html", questions = questions), 200
+
+#         #Check for correct extraction from DB
+#         # questions = list(mongo.db.questionaire.find())
+#         # return JSONEncoder().encode(questions), 200
+#     except Exception as e: 
+#         return dumps({'error': str(e)})
+
+#Questionaire page 
 @app.route('/questionnaire')
 def getAllQuestions(): 
     try:
@@ -112,6 +125,35 @@ def getAllQuestions():
         # return JSONEncoder().encode(questions), 200
     except Exception as e: 
         return dumps({'error': str(e)})
+
+#Receive and Store risk tolerance & sustainability indication
+@app.route('/storeResult', methods=['POST'])
+def storeResult():
+    # Simple check of input format and data of the request are JSON
+    if request.is_json:
+        try:
+            result = request.get_json()
+            print("\nReceived result in JSON:",
+                  result)
+            data = mongo.db.user.find_one_and_update(
+                {"_id": user},
+                {"$set": result},
+                return_document=ReturnDocument.AFTER,
+            )
+            return JSONEncoder().encode(data), 200
+
+        except Exception as e:
+            return jsonify({
+                "code": 404,
+                "message": str(e)
+            }), 404
+
+    # if reached here, not a JSON request.
+    return jsonify({
+        "code": 400,
+        "message": "Invalid JSON input: " + str(request.get_data()),
+        "test": str(request.is_json)
+    }), 400
 
 #Tolerance Page 
 @app.route('/result')
