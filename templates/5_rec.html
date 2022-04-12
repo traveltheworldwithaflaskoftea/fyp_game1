@@ -18,7 +18,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-
+    
     <!--Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,34 +65,30 @@
                 </div> 
                 <!-- Card group-->
                 <div class="card-group" id="card_rs">
-                  {% set id = ["flagship_20", "esg_0", "china_fi"] %}
-                  {% for portfolio in portfolios %}
-                    {% if portfolio._id in id %}
-                      <div class="card border-flush">
-                        <div class="card-header" style="font-size:14px;">
-                          <img src="{{ portfolio.icon }}" loading="lazy" alt="" class="invest-menu-icon">
-                          {{ portfolio.type }}
-                        </div>
-                        <div class="card-body mx-3">
-                          <img src="{{ portfolio.image }}" alt="" style="max-width:120px;">
-                          <h5 class="card-title mt-3" style="font-family: 'Press Start 2P', cursive; font-size: medium;">{{ portfolio.name }}</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item">{{ portfolio.details }}</li>
-                          <li class="list-group-item">Invest with <strong>{{ portfolio.source }}</strong></li>
-                          <li class="list-group-item">{{ portfolio.risk }}</li>
-                        </ul>
-                        <div class="card-body">
-                          <a href="{{ portfolio.link }}" class="card-link">Learn more!</a>
-                        </div>
+                  {% for portfolio in portfolioFile %}
+                    <div class="card border-flush">
+                      <div class="card-header" style="font-size:14px;">
+                        <img src="{{ portfolio.icon }}" loading="lazy" alt="" class="invest-menu-icon">
+                        {{ portfolio.type }}
                       </div>
-                    {% endif %}
+                      <div class="card-body mx-3">
+                        <img src="{{ portfolio.image }}" alt="" style="max-width:120px;">
+                        <h5 class="card-title mt-3" style="font-family: 'Press Start 2P', cursive; font-size: medium;">{{ portfolio.name }}</h5>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{ portfolio.details }}</li>
+                        <li class="list-group-item">Invest with <strong>{{ portfolio.source }}</strong></li>
+                        <li class="list-group-item">{{ portfolio.risk }}</li>
+                      </ul>
+                      <div class="card-body">
+                        <a href="{{ portfolio.link }}" class="card-link">Learn more!</a>
+                      </div>
+                    </div>
                   {% endfor %}
-                  </div>
+                </div>
                   <a href="https://endowus.com/app/login">
                     <button class="btn btn-secondary btn-lg mt-3 mb-0" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Invest now!</button>
                   </a>
-                  
             </div>
         </div>
     </div>

@@ -29,7 +29,7 @@
 {
     "_id": "r5", 
     "rec":{
-        "s": ["flagship", "esg", "esg" ],
+        "s": ["esg", "esg", "flagship" ],
         "ns": ["flagship", "flagship", "esg"]
     }
 }]

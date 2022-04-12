@@ -6,6 +6,7 @@ from utils import JSONEncoder
 from flask_cors import CORS
 from bson.json_util import dumps
 import json
+import random
 
 app = Flask(__name__)
 CORS(app)
@@ -58,11 +59,11 @@ def saveGoal():
             lifestage = result["lifestage"]
             goal_num = result["goal"]
             print(lifestage, goal_num)
-            lifestage_data = mongo.db.lifestage.find_one_or_404({"_id": lifestage})
-            goal = lifestage_data["goals"][goal_num]
+            # lifestage_data = mongo.db.lifestage.find_one_or_404({"_id": lifestage})
+            # goal = lifestage_data["goals"][goal_num]
             values = {
                 "lifestage": lifestage, 
-                "goal": goal
+                "goal": goal_num
             }
             
             data = mongo.db.user.find_one_and_update(
@@ -143,19 +144,78 @@ def getResult():
     except Exception as e: 
         return dumps({'error': str(e)})
 
-#Recommend Page
+#Recommendation Page
 @app.route('/recommendation')
-def getAllPortfolios(): 
+def getRecommendation():
     try:
-        portfolios = mongo.db.portfolio.find()
-        return render_template("5_rec.html", portfolios = portfolios), 200
+        #1. Get goal num , interest in sustainability & risk
+        user_data = mongo.db.user.find_one_or_404({"_id": user})
+        lifestage = user_data["lifestage"]
+        goal = user_data["goal"]
+        sustainability = user_data["sustainability"]
+        risk = user_data["risk"]
+        if str(sustainability) == "are":
+            sustainability = "s"
+        else: 
+            sustainability = "ns"
+        #print(goal,sustainability, lifestage, risk)
+
+        #2. Get mapping & fund source
+        mappings = mongo.db.mappings.find_one_or_404({"_id": lifestage})
+        mapping = mappings[goal]["rec"]
+        source = mappings[goal]["source"]
+        #print(mapping, source)
+
+        #3. Get portfolio category array according to sustainability 
+        recommendations = mongo.db.recommendations.find_one_or_404({"_id": mapping})
+        rec = recommendations["rec"][sustainability]
+        # print(rec)
+
+        #4. Get specific portfolio _id in an array
+        portfolioIDs = [] 
+        portfolios = mongo.db.byrisk.find_one_or_404({"_id": risk})
+
+        #Function: Choose random portfolio ID  
+        def randomPortfolio(item):
+            portfolioByCategory = portfolios[item]
+            chosenPortfolio = random.choice(tuple(portfolioByCategory))
+            portfolioIDs.append(chosenPortfolio)
+
+        #Checking for flagship duplicates
+        if rec.count("flagship") > 1: 
+            for i in portfolios["flagship"]: 
+                portfolioIDs.append(i)
+            randomPortfolio(rec[2])
+        elif rec.count("esg") > 1: 
+            for i in portfolios["esg"]: 
+                portfolioIDs.append(i)
+            randomPortfolio(rec[2])
+        else: 
+            for item in rec: 
+                randomPortfolio(item)
+        print(rec)
+        print(portfolioIDs)
+
+        #Save the recommendations in DB
+        mongo.db.user.find_one_and_update(
+                {"_id": user},
+                {"$set": {"recommendations": portfolioIDs}},
+                return_document=ReturnDocument.AFTER,
+        )
+       
+
+        #5. Return portfolios to be visualised 
+        portfolioFile = []
+        for id in portfolioIDs:     
+            finalRecommend = mongo.db.portfolio.find_one_or_404({"_id": id})
+            finalRecommend["source"] = source
+            #print(finalRecommend["source"])
+            portfolioFile.append(finalRecommend)
+        #print(portfolioFile)
+        return render_template("5_rec.html", portfolioFile = portfolioFile), 200
+
     except Exception as e: 
         return dumps({'error': str(e)})
-
-@app.route('/recommendation/<id>')
-def getOnePortfolio(id): 
-    portfolio = mongo.db.portfolio.find_one_or_404({"_id": id})
-    return JSONEncoder().encode(portfolio), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
