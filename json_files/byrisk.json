@@ -1,0 +1,21 @@
+[{
+    "_id": "high", 
+    "flagship": ["flagship_100", "flagship_80"], 
+    "esg": ["esg_100", "esg_80"], 
+    "satellite": ["megatrends", "china_e", "tech", "global_re"], 
+    "cash_smart": ["ultra"]
+}, 
+{
+    "_id": "moderate", 
+    "flagship": ["flagship_60", "flagship_40"], 
+    "esg": ["esg_60", "esg_40"], 
+    "cash_smart": ["enhanced"]
+}, 
+{
+    "_id": "low", 
+    "flagship": ["flagship_20", "flagship_0"], 
+    "esg": ["esg_20", "esg_0"], 
+    "satellite": ["china_fi", "low_vfi"], 
+    "cash_smart": ["secure"]
+}
+]
