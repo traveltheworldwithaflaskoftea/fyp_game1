@@ -4,8 +4,8 @@
     "name": "John"
 },
 {
-    "_id": "user5", 
-    "email": "user5@gmail.com", 
+    "_id": "user4", 
+    "email": "user4@gmail.com", 
     "name": "Kelly", 
     "goal":"2", 
     "lifestage":"student", 

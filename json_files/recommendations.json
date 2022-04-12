@@ -18,16 +18,9 @@
         "s": ["esg", "satellite", "cash_smart" ],
         "ns": ["flagship", "satellite", "cash_smart"]
     }
-}, 
+},  
 {
     "_id": "r4", 
-    "rec":{
-        "s": ["flagship", "esg", "cash_smart" ],
-        "ns": ["flagship", "flagship", "cash_smart"]
-    }
-}, 
-{
-    "_id": "r5", 
     "rec":{
         "s": ["esg", "esg", "flagship" ],
         "ns": ["flagship", "flagship", "esg"]

@@ -35,7 +35,7 @@
         "source": "Cash, CPF"
     },
     "2": {
-        "rec": "r4",
+        "rec": "r2",
         "source": "SRS"
     },
     "3": {
@@ -50,7 +50,7 @@
         "source": "Cash, SRS, CPF"
     },
     "2": {
-        "rec": "r4",
+        "rec": "r2",
         "source": "SRS"
     },
     "3": {
@@ -61,11 +61,11 @@
 {
     "_id": "family_man", 
     "1": {
-        "rec": "r4",
+        "rec": "r2",
         "source": "SRS"
     },
     "2": {
-        "rec": "r5",
+        "rec": "r4",
         "source": "CPF"
     },
     "3": {
