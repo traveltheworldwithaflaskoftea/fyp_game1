@@ -1,5 +1,5 @@
 from json import JSONEncoder
-from flask import Flask, jsonify, request, redirect, render_template
+from flask import Flask, jsonify, request, redirect, render_template, session, url_for
 from flask_pymongo import PyMongo
 from pymongo import ReturnDocument
 from utils import JSONEncoder
@@ -63,8 +63,6 @@ def logged_in():
 #Logout
 @app.route('/logout', methods=['POST', 'GET'])
 def logout():
-    # if "email" in session:
-    #     session.pop("email", None)
     return render_template('6_signout.html')
 
     
@@ -93,6 +91,7 @@ def test():
 @app.route('/goal')
 def getGoals():
     return render_template('2_goal.html'), 200
+
 
 @app.route('/goal/<id>')
 def getOneLifestage(id): 
