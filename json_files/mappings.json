@@ -2,74 +2,89 @@
     "_id": "student", 
     "1": {
         "rec": "r1",
-        "source": "Cash"
+        "source": ["Cash"], 
+        "reason": "Grow your cash savings better with Endowus!"
     }, 
     "2": {
         "rec": "r2",
-        "source": "Cash"
+        "source": ["Cash"], 
+        "reason": "Grow your cash savings better with Endowus!"
     }, 
     "3": {
         "rec": "r3",
-        "source": "Cash"
+        "source": ["Cash"], 
+        "reason": "Grow your cash savings better with Endowus!"
     }
 }, 
 {
     "_id": "fresh_grad", 
     "1": {
         "rec": "r3",
-        "source": "Cash"
+        "source": ["Cash"], 
+        "reason": "Grow your cash savings better with Endowus!"
     },
     "2": {
         "rec": "r2",
-        "source": "Cash"
+        "source": ["Cash"], 
+        "reason": "Grow your cash savings better with Endowus!"
     }, 
     "3": {
         "rec": "r1",
-        "source": "Cash"
+        "source": ["Cash"], 
+        "reason": "Grow your cash savings better with Endowus!"
     }
 }, 
 {
     "_id": "bachelor", 
     "1": {
         "rec": "r3",
-        "source": "Cash, CPF"
+        "source": ["Cash", "CPF"], 
+        "reason": "Grow your cash savings & CPF OA funds beyond the guaranteed 2.5% to pay for your housing & more!"
     },
     "2": {
         "rec": "r2",
-        "source": "SRS"
+        "source": ["SRS"], 
+        "reason": "With SRS contributions, you can enjoy income tax relief!"
     },
     "3": {
         "rec": "r1",
-        "source": "Cash, SRS, CPF"
+        "source": ["Cash", "SRS", "CPF"],
+        "reason": "Grow your cash savings, CPF OA Fund, and enjoy tax relief with Endowus!"
     }    
 }, 
 {
     "_id": "married_man", 
     "1": {
         "rec": "r3",
-        "source": "Cash, SRS, CPF"
+        "source": ["Cash", "SRS", "CPF"], 
+        "reason": "Grow your cash savings, CPF OA Fund, and enjoy tax relief with Endowus!"
     },
     "2": {
         "rec": "r2",
-        "source": "SRS"
+        "source":  ["SRS"],
+        "reason": "With SRS contributions, you can enjoy income tax relief!"
     },
     "3": {
         "rec": "r1",
-        "source": "Cash, SRS, CPF"
+        "source": ["Cash", "SRS", "CPF"], 
+        "reason": "Grow your cash savings, CPF OA Fund, and enjoy tax relief with Endowus!"
     }  
 }, 
 {
     "_id": "family_man", 
     "1": {
         "rec": "r2",
-        "source": "SRS"
+        "source": ["SRS"], 
+        "reason": "With SRS contributions, you can enjoy income tax relief!"
     },
     "2": {
         "rec": "r4",
-        "source": "CPF"
+        "source": ["CPF"], 
+        "reason": "Grow your CPF OA funds beyond the guaranteed 2.5% to pay for your housing & more!"
     },
     "3": {
         "rec": "r1",
-        "source": "Cash, SRS, CPF"
+        "source": ["Cash", "SRS", "CPF"],
+        "reason": "Grow your cash savings, CPF OA Fund, and enjoy tax relief with Endowus!"
     }  
 }]

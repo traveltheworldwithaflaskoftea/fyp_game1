@@ -223,6 +223,7 @@ def getRecommendation():
         mappings = mongo.db.mappings.find_one_or_404({"_id": lifestage})
         mapping = mappings[goal]["rec"]
         source = mappings[goal]["source"]
+        reason = mappings[goal]["reason"]
         #print(mapping, source)
 
         #3. Get portfolio category array according to sustainability 
@@ -265,13 +266,19 @@ def getRecommendation():
 
         #5. Return portfolios to be visualised 
         portfolioFile = []
-        for id in portfolioIDs:     
+        for id in portfolioIDs:    
+            recSources = [] 
             finalRecommend = mongo.db.portfolio.find_one_or_404({"_id": id})
-            finalRecommend["source"] = source
-            #print(finalRecommend["source"])
+            for i in source: 
+                if i in finalRecommend["source"]: 
+                    recSources.append(i)
+            print("list:", recSources)
+            recSources = ",".join(recSources)
+            print("string:",  recSources)
+            finalRecommend["source"] = recSources
             portfolioFile.append(finalRecommend)
         #print(portfolioFile)
-        return render_template("5_rec.html", portfolioFile = portfolioFile), 200
+        return render_template("5_rec.html", portfolioFile = portfolioFile, reason = reason), 200
 
     except Exception as e: 
         return dumps({'error': str(e)})

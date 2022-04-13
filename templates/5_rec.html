@@ -62,13 +62,14 @@
             <div class="container p-4 px-5 bg-light rounded-3 text-center">
                 <div class="m-2 mb-3">
                     <h3 style="font-family: 'Bungee', cursive; font-size: 32px;">Recommended Portfolios ✨</h3>
+                    <h6 style="font-family: 'Iceland', cursive; font-size: 23px;">{{ reason }}</h5>
                 </div> 
                 <!-- Card group-->
                 <div class="card-group" id="card_rs">
                   {% for portfolio in portfolioFile %}
                     <div class="card border-flush">
                       <div class="card-header" style="font-size:14px;">
-                        <img src="{{ portfolio.icon }}" loading="lazy" alt="" class="invest-menu-icon">
+                        <img src="{{ portfolio.icon }}"  style="height:18px;" loading="lazy" alt="" class="invest-menu-icon">
                         {{ portfolio.type }}
                       </div>
                       <div class="card-body mx-3">
