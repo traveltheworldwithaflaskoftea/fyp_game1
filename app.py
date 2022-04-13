@@ -58,7 +58,7 @@ def saveGoal():
                   result)
             lifestage = result["lifestage"]
             goal_num = result["goal"]
-            print(lifestage, goal_num)
+            #print(lifestage, goal_num)
             # lifestage_data = mongo.db.lifestage.find_one_or_404({"_id": lifestage})
             # goal = lifestage_data["goals"][goal_num]
             values = {
@@ -135,12 +135,17 @@ def getResult():
     try:
         user_data = mongo.db.user.find_one_or_404({"_id": user})
         lifestage = user_data["lifestage"]
+        risk = user_data["risk"]
+        risk_data = mongo.db.byrisk.find_one_or_404({"_id": risk})
+        percentage = risk_data["def"]
+        print(percentage)
+
         lifestage_data = mongo.db.lifestage.find_one_or_404({"_id": lifestage})
         img = lifestage_data["img"]
         name = lifestage_data["name"]
-        print(img, name)
+        #print(img, name)
         # return JSONEncoder().encode(user_data), 200
-        return render_template("4_result.html", user_data = user_data, name = name, img = img), 200
+        return render_template("4_result.html", user_data = user_data, name = name, img = img, percentage = percentage), 200
     except Exception as e: 
         return dumps({'error': str(e)})
 
@@ -193,7 +198,7 @@ def getRecommendation():
         else: 
             for item in rec: 
                 randomPortfolio(item)
-        print(rec)
+        #print(rec)
         print(portfolioIDs)
 
         #Save the recommendations in DB
