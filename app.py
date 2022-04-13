@@ -1,5 +1,5 @@
 from json import JSONEncoder
-from flask import Flask, jsonify, request, redirect, render_template
+from flask import Flask, jsonify, request, redirect, render_template, session, url_for
 from flask_pymongo import PyMongo
 from pymongo import ReturnDocument
 from utils import JSONEncoder
@@ -15,12 +15,60 @@ mongo = PyMongo(app)
 # Need to make user dynamic !! and save it here 
 user = "user3"
 
-@app.route('/test')
-def test():
-    return "App is working perfectly"
+app.secret_key = "testing"
+
+
+#Login Page
+@app.route('/', methods=['POST', 'GET'])
+def login():
+    try:
+        lifestages = list(mongo.db.lifestage.find())
+    except Exception as e: 
+        return dumps({'error': str(e)})  
+
+    message = ''
+    if "email" in session:
+        return redirect(url_for("getAllLifestages"))
+
+    if request.method == "POST":
+        #Recording into session
+        email = request.form.get("email")
+
+        #check if email exists in database
+        user_data = mongo.db.user.find_one({"email": email})
+        print(user_data)
+        
+        if user_data :
+            user = user_data["_id"]
+            session["user"]= user
+            print(session.get("user"))
+            # if "email" in session:
+            return redirect(url_for("getAllLifestages"))
+        else:
+            message = 'Email not found/ incorrect'
+            return render_template('0_login.html', lifestages= lifestages, message=message)
+
+    return render_template("0_login.html", lifestages = lifestages), 200
+    
+
+#Logged In
+@app.route('/logged_in')
+def logged_in():
+    if "email" in session:
+        email = session["email"]
+        return render_template('1_index.html', email=email)
+    else:
+        return redirect(url_for('getAllLifestages'))
+
+#Logout
+@app.route('/logout', methods=['POST', 'GET'])
+def logout():
+    return render_template('6_signout.html')
+
+    
 
 #Index Page Functions 
-@app.route('/')
+@app.route('/lifestages')
 def getAllLifestages():
     try:
         #Use these 2 lines when checking on Postman
@@ -29,15 +77,21 @@ def getAllLifestages():
 
         #Use these 2 lines when visualizing on page
         lifestages = list(mongo.db.lifestage.find())
-        return render_template("1_index.html", lifestages = lifestages), 200
+        users = list(mongo.db.user.find())
+        return render_template("1_index.html", lifestages = lifestages, users = users), 200
     except Exception as e: 
         return dumps({'error': str(e)})
+
+@app.route('/test')
+def test():
+    return "App is working perfectly"
 
 
 #Select goal page
 @app.route('/goal')
 def getGoals():
     return render_template('2_goal.html'), 200
+
 
 @app.route('/goal/<id>')
 def getOneLifestage(id): 
