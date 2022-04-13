@@ -22,19 +22,7 @@
             background: url('https://fyp-game1.s3.amazonaws.com/assets/bckgrnd2.jpg') no-repeat center fixed;
             background-size: cover;
         }
-
-        .zoom {
-            transition: transform .2s; /* Animation */
-            width: 200px;
-            height: 900px;
-            margin: 0 auto;
-        }
-
-        .zoom:hover {
-            transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-        }
    
-
     </style>
   </head>
   <body>
@@ -52,14 +40,19 @@
                 <!-- Characters Row 1-->
                 <div class="card-group" style=" height: 25rem;">
                     <div class="card">
-                      <img src= {{img}} class="card-img-top mx-auto mt-5 zoom" alt="Student" style="height: 200px; width: 200px;">
-                      <div class="card-body align-items-center d-flex justify-content-center">
-                        <h5 class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">{{name}}</h5>
+                      <div class="card-body justify-content-center align-items-center">
+                        <img src= {{img}} class="card-img-top mx-auto mt-5 zoom" alt="{{user_data.name}}" style="height: 180px; width: auto;">
+                        <h5 class="card-title mt-2" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">{{name}}</h5>
                       </div>
                     </div>
                     <div class="card">
                       <div class="card-body align-items-center d-flex justify-content-center">
-                        <p class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 20px; text-align: left;"> 1. You have a <span style="background-color: #c0e7c0; text-transform: uppercase;">{{user_data.risk}}</span> risk tolerance <br><br> 2. You <span style="background-color: #c0e7c0; text-transform: uppercase;"> {{user_data.sustainability}}</span> interested in Sustainable Investing</span></p>
+                        <p class="card-title" style="font-family: 'Press Start 2P', cursive; font-size: 19px; text-align: left;"> > You have a <span style="background-color: #c0e7c0; text-transform: uppercase;">{{user_data.risk}}</span> risk tolerance <br>
+                          <span style="font-family: monospace; font-size: 14px;">💡 Note: At worst, you can tolerate a 12-month percentage loss of: 
+                          <span style="font-weight: bold;">{{ percentage }}</span></span>
+                        <br><br>
+                        > You <span style="background-color: #c0e7c0; text-transform: uppercase;"> {{user_data.sustainability}}</span> interested in Sustainable Investing</span>
+                        </p>
                       </div>
                     </div> 
                   </div>  

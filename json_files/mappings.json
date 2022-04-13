@@ -1,0 +1,75 @@
+[{
+    "_id": "student", 
+    "1": {
+        "rec": "r1",
+        "source": "Cash"
+    }, 
+    "2": {
+        "rec": "r2",
+        "source": "Cash"
+    }, 
+    "3": {
+        "rec": "r3",
+        "source": "Cash"
+    }
+}, 
+{
+    "_id": "fresh_grad", 
+    "1": {
+        "rec": "r3",
+        "source": "Cash"
+    },
+    "2": {
+        "rec": "r2",
+        "source": "Cash"
+    }, 
+    "3": {
+        "rec": "r1",
+        "source": "Cash"
+    }
+}, 
+{
+    "_id": "bachelor", 
+    "1": {
+        "rec": "r3",
+        "source": "Cash, CPF"
+    },
+    "2": {
+        "rec": "r2",
+        "source": "SRS"
+    },
+    "3": {
+        "rec": "r1",
+        "source": "Cash, SRS, CPF"
+    }    
+}, 
+{
+    "_id": "married_man", 
+    "1": {
+        "rec": "r3",
+        "source": "Cash, SRS, CPF"
+    },
+    "2": {
+        "rec": "r2",
+        "source": "SRS"
+    },
+    "3": {
+        "rec": "r1",
+        "source": "Cash, SRS, CPF"
+    }  
+}, 
+{
+    "_id": "family_man", 
+    "1": {
+        "rec": "r2",
+        "source": "SRS"
+    },
+    "2": {
+        "rec": "r4",
+        "source": "CPF"
+    },
+    "3": {
+        "rec": "r1",
+        "source": "Cash, SRS, CPF"
+    }  
+}]
