@@ -70,12 +70,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="/logout">Log Out</a>
               </div>
-              {% set userid = session.get("user") %}
-              {% for user in users %}
-                  {% if user._id == userid %}
-                      <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ user.name }}</div>
-                  {% endif %}
-              {% endfor %}  
+              <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ name }}</div> 
           </li>   
       </ul>
       </nav>

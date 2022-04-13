@@ -50,12 +50,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="/logout">Log Out</a>
             </div>
-            {% set userid = session.get("user") %}
-            {% for user in users %}
-                {% if user._id == userid %}
-                    <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ user.name }}</div>
-                {% endif %}
-            {% endfor %}  
+            <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ name }}</div>
         </li>   
     </ul>
     </nav>
@@ -70,7 +65,7 @@
                     <div class="card">
                       <div class="card-body justify-content-center align-items-center">
                         <img src= {{img}} class="card-img-top mx-auto mt-5 zoom" alt="{{user_data.name}}" style="height: 180px; width: auto;">
-                        <h5 class="card-title mt-2" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">{{name}}</h5>
+                        <h5 class="card-title mt-2" style="font-family: 'Press Start 2P', cursive; font-size: 20px;">{{ lifestage }}</h5>
                       </div>
                     </div>
                     <div class="card">
