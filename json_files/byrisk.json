@@ -8,7 +8,8 @@
 {
     "_id": "moderate", 
     "flagship": ["flagship_60", "flagship_40"], 
-    "esg": ["esg_60", "esg_40"], 
+    "esg": ["esg_60", "esg_40"],
+    "satellite": ["china_fi", "low_vfi"],  
     "cash_smart": ["enhanced"]
 }, 
 {
