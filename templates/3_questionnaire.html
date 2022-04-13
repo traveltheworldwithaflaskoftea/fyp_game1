@@ -41,6 +41,19 @@
           line-height: 1.8;
         }
 
+        li {
+            list-style-type: none;
+        }
+        .dropdown-toggle::after {
+            content: none;
+        }
+        ul{
+            margin: 0%;
+        }
+        .profile-name{
+            text-align:center;
+        }
+
 
     </style>
     </head>
@@ -49,6 +62,22 @@
         <a class="navbar-brand mx-0" href="https://endowus.com/">
             <img src="https://fyp-game1.s3.amazonaws.com/assets/endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
         </a>
+        <ul>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="https://fyp-game1.s3.amazonaws.com/assets/user-solid.svg" width="40" height="40" class="rounded-circle"> 
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/logout">Log Out</a>
+              </div>
+              {% set userid = session.get("user") %}
+              {% for user in users %}
+                  {% if user._id == userid %}
+                      <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ user.name }}</div>
+                  {% endif %}
+              {% endfor %}  
+          </li>   
+      </ul>
       </nav>
 
       <div class="py-5">
