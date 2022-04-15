@@ -123,7 +123,7 @@
             "goal": goal, 
             "lifestage": lifestage
         };
-        var serviceURL = "http://127.0.0.1:5000/saveGoal";
+        var serviceURL = "https://portfolio-recc.herokuapp.com/saveGoal";
 
         //for error handling 
         try {
@@ -150,7 +150,7 @@
               // service offline, etc
               console.log('There is a problem with request, please try again later.<br />' + error);
           } // error
-        return window.location.href='http://127.0.0.1:5000/questionnaire';
+        return window.location.href='https://portfolio-recc.herokuapp.com/questionnaire';
       };
     </script>
    
