@@ -1,4 +1,4 @@
-# 🧍 Game 1 - Profiling
+# 🧍 Solution 1 - Portfolio Recommender
 [FYP Project] Gamifying Financial Literacy
 
 ## Project Management Tools
@@ -8,10 +8,11 @@
 - [Balasmiq](https://drive.google.com/file/d/17DneBRFHjLqSMf__QU4schfs7CL0lqn6/view?usp=sharing), for Low-Fi Prototypes
 
 ## Application Technologies
-- **Front-End**: HTML, CSS
+- **Front-End**: HTML, CSS, Javascript
 - **Back-End**: Python Flask
 - **Database**: MongoDB Atlas
-- **Testing**: Postman, Unittest
+- **Deployment**: Heroku
+- **Testing**: Postman, SIT, UAT
 - **Continuous Integration (CI)**: GitHub Actions
 - **Continuous Deployment (CD)**: Heroku
 - **Design**: Miro, Draw.io
@@ -29,8 +30,10 @@
 └───templates
      ├───assets
 ```
-
-## Installation and Running
+## Deployed Application 
+   Navigate to https://portfolio-recc.herokuapp.com/
+   
+## Installation & Running on Local Machine
 1. Install requirements 
    ```
    $ pip install Flask-PyMongo
