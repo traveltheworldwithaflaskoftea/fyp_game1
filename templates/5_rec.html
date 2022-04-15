@@ -24,8 +24,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Iceland&display=swap" rel="stylesheet">
     <title>Recommendations</title>
     <style>
@@ -85,7 +83,7 @@
             <div class="container p-4 px-5 bg-light rounded-3 text-center">
                 <div class="m-2 mb-3">
                     <h3 style="font-family: 'Bungee', cursive; font-size: 32px;">Recommended Portfolios ✨</h3>
-                    <h6 style="font-family: 'Iceland', cursive; font-size: 23px;">{{ reason }}</h5>
+                    <h6 style="font-family: monospace; font-size: 18px;">{{ reason }}</h5>
                 </div> 
                 <!-- Card group-->
                 <div class="card-group" id="card_rs">
@@ -100,9 +98,9 @@
                         <h5 class="card-title mt-3" style="font-family: 'Press Start 2P', cursive; font-size: 13px;">{{ portfolio.name }}</h5>
                       </div>
                       <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{ portfolio.typeDesc }}</li>
                         <li class="list-group-item">{{ portfolio.details }}</li>
                         <li class="list-group-item">Invest with <strong>{{ portfolio.source }}</strong></li>
-                        <li class="list-group-item">{{ portfolio.risk }}</li>
                       </ul>
                       <div class="card-body">
                         <a href="{{ portfolio.link }}" class="card-link">Learn more!</a>

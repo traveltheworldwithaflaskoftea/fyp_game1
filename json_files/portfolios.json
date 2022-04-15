@@ -1,12 +1,13 @@
 [
 {
     "_id": "flagship_100", 
-    "type": "Core",
+    "type": "Core", 
+    "typeDesc": "Globally diversified portfolios for your essential life goals", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
     "name": "Flagship", 
     "details": "100% Equities",
-    "source": ["Cash", "SRS", "CPF"],    
+    "source": ["Cash", "SRS", "CPF"],
     "risk": "High risk", 
     "link": "https://endowus.com/flagship"
 },
@@ -14,6 +15,7 @@
 {
     "_id": "flagship_80", 
     "type": "Core",
+        "typeDesc": "Globally diversified portfolios for your essential life goals", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
     "name": "Flagship", 
@@ -25,7 +27,8 @@
 
 {
     "_id": "flagship_60", 
-    "type": "Core",
+    "type": "Core",    
+    "typeDesc": "Globally diversified portfolios for your essential life goals", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
     "name": "Flagship", 
@@ -38,6 +41,7 @@
 {
     "_id": "flagship_40", 
     "type": "Core",
+    "typeDesc": "Globally diversified portfolios for your essential life goals", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
     "name": "Flagship", 
@@ -50,6 +54,7 @@
 {
     "_id": "flagship_20", 
     "type": "Core",
+    "typeDesc": "Globally diversified portfolios for your essential life goals", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
     "name": "Flagship", 
@@ -62,6 +67,7 @@
 {
     "_id": "flagship_0", 
     "type": "Core",
+    "typeDesc": "Globally diversified portfolios for your essential life goals", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
     "name": "Flagship", 
@@ -75,6 +81,7 @@
 {
     "_id": "esg_100", 
     "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
     "name": "ESG", 
@@ -87,6 +94,7 @@
 {
     "_id": "esg_80", 
     "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
     "name": "ESG", 
@@ -99,6 +107,7 @@
 {
     "_id": "esg_60", 
     "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
     "name": "ESG", 
@@ -111,6 +120,7 @@
 {
     "_id": "esg_40", 
     "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
     "name": "ESG", 
@@ -123,6 +133,7 @@
 {
     "_id": "esg_20", 
     "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
     "name": "ESG", 
@@ -135,6 +146,7 @@
 {
     "_id": "esg_0", 
     "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
     "name": "ESG", 
@@ -147,6 +159,7 @@
 {
     "_id": "global_re", 
     "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e53ba1d0a5270b0faa6_Global%20Real%20Estate.png",   
     "name": "Global Real Estate", 
@@ -159,6 +172,7 @@
 {
     "_id": "tech", 
     "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svgg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e0d0bb0d27532efb31a_Technology.png",   
     "name": "Technology", 
@@ -171,6 +185,7 @@
 {
     "_id": "china_e", 
     "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e49a796fe3c40c8a118_China%20Equities.png",   
     "name": "China Equities", 
@@ -183,6 +198,7 @@
 {
     "_id": "china_fi", 
     "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e3faa6c8c9ebcce317a_China%20FI.png",   
     "name": "China Fixed Income", 
@@ -195,6 +211,7 @@
 {
     "_id": "megatrends", 
     "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e60a2b1dfffa7c4bf5d_Megatrends.png",   
     "name": "Megatrends", 
@@ -207,6 +224,7 @@
 {
     "_id": "low_vfi", 
     "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e35849b800fdeb143e9_Low%20Volatility%20FI.png",   
     "name": "Low Volatility Fixed Income", 
@@ -219,6 +237,7 @@
 {
     "_id": "ultra", 
     "type": "Cash Smart",
+    "typeDesc": "Earn higher yields with low risk for your short-term goals", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61910322ea41ef5ed34fb9b6_icon-cashsmart.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c849b805938b13f1a_Cashsmart.png",   
     "name": "Ultra", 
@@ -231,6 +250,7 @@
 {
     "_id": "enhanced", 
     "type": "Cash Smart",
+    "typeDesc": "Earn higher yields with low risk for your short-term goals", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61910322ea41ef5ed34fb9b6_icon-cashsmart.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c849b805938b13f1a_Cashsmart.png",   
     "name": "Enhanced", 
@@ -243,6 +263,7 @@
 {
     "_id": "secure", 
     "type": "Cash Smart",
+    "typeDesc": "Earn higher yields with low risk for your short-term goals", 
     "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61910322ea41ef5ed34fb9b6_icon-cashsmart.svg", 
     "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c849b805938b13f1a_Cashsmart.png",   
     "name": "Secure", 
