@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Iceland&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Questionnaire</title>
+    <style>
+        body {
+            background: url('https://fyp-game1.s3.amazonaws.com/assets/bckgrnd2.jpg') no-repeat center fixed;
+            background-size: cover;
+        }
+
+        .zoom {
+            transition: transform .2s; /* Animation */
+            width: 200px;
+            height: 900px;
+            margin: 0 auto;
+        }
+
+        .zoom:hover {
+            transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+
+        .questionnaire {
+          text-align:left;
+          line-height: 1.8;
+        }
+
+        li {
+            list-style-type: none;
+        }
+        .dropdown-toggle::after {
+            content: none;
+        }
+        ul{
+            margin: 0%;
+        }
+        .profile-name{
+            text-align:center;
+        }
+
+
+    </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand mx-0" href="https://endowus.com/">
+            <img src="https://fyp-game1.s3.amazonaws.com/assets/endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
+        </a>
+        <ul>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="https://fyp-game1.s3.amazonaws.com/assets/user-solid.svg" width="40" height="40" class="rounded-circle"> 
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/logout">Log Out</a>
+              </div>
+              <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ name }}</div> 
+          </li>   
+      </ul>
+      </nav>
+
+      <div class="py-5">
+        <div class="container px-sm-1">
+          <div class="container p-4 px-5 bg-light rounded-3 text-center">
+            <div class="m-2 mb-3 align-items-center">
+                <h3 class="mb-0" style="font-family: 'Bungee', cursive; font-size: 32px;">Get to know yourself better! 🚀</h3>
+                <h3 style="font-family: 'Iceland', cursive; font-size: 23px; color: darkgrey;">Find out your risk tolerance & indicate investment preferences</h3> 
+            </div>  
+            <div class="card-group">
+              <div class="container">
+                <div class="card">
+                  <div class="container-full-bg">   
+                      <!--Question 1-->
+                      <div id="q1" class="container m-3 questionnaire">
+                        <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px">Q1. You are on a TV game show and can choose one of the following. Which would you take?</h5>
+                        <div class="row" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                          <div class="col-sm-10">
+                            <div class="form-check">
+                              <!-- For form validation: Need to change name to be specific to each -->
+                              <input class="form-check-input" id="A" type="radio" value="A" name="q1" checked="checked">
+                              <label class="form-check-label" for="A">
+                                $1,000 in cash
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" id="B" value="B" name="q1">
+                              <label class="form-check-label" for="B">
+                                A 50% chance at winning $5,000
+                              </label>
+                            </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" id="C" value="C" name = "q1">
+                                <label class="form-check-label" for="C">
+                                  A 25% chance at winning $10,000
+                                </label>
+                              </div>
+                          </div>
+                        </div>
+                      </div> 
+                      <!--Question 2-->
+                      <div id="q2" class="container m-3 questionnaire">
+                        <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px;">
+                          Q2. Given the best and worst case returns of the four investment choices below, which would you prefer?  </h5>
+                          <div class="row" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <!-- For form validation: Need to change name to be specific to each -->
+                                <input class="form-check-input" id="q2_A" type="radio" value="A" name="q2" checked="checked">
+                                <label class="form-check-label" for="q2_A">
+                                  $200 gain best case; $0 gain/loss worst case
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q2_B" value="B" name="q2">
+                                <label class="form-check-label" for="q2_B">
+                                  $800 gain best case; $200 loss worst case
+                                </label>
+                              </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" id="q2_C" value="C" name = "q2">
+                                  <label class="form-check-label" for="q2_C">
+                                    $4,800 gain best case; $2,400 loss worst case
+                                  </label>
+                                </div>
+                            </div>
+                        </div>
+                      </div> 
+                      <!--Question 3-->
+                      <div id="q3" class="container m-3 questionnaire">
+                        <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px;">
+                          Q3. In addition to whatever you own, you have been given $1,000. You are now asked to choose between:</h5>
+                        <div class="row" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                          <div class="col-sm-10">
+                            <div class="form-check">
+                              <!-- For form validation: Need to change name to be specific to each -->
+                              <input class="form-check-input" id="q3_A" type="radio" value="A" name="q3" checked="checked">
+                              <label class="form-check-label" for="q3_A">
+                                100% sure gain of $500
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" id="q3_B" value="B" name="q3">
+                              <label class="form-check-label" for="q3_B">
+                                60% chance to gain $800
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" id="q3_C" value="C" name = "q3">
+                              <label class="form-check-label" for="q3_C">
+                                30% chance to gain $1,500
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                      <!--Question 4-->
+                      <div id="q4" class="container m-3 questionnaire">
+                        <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px;">
+                          Q4. Which statement makes the most sense to you? </h5>
+                          <div class="row" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <!-- For form validation: Need to change name to be specific to each -->
+                                <input class="form-check-input" id="q4_A" type="radio" value="A" name="q4" checked="checked">
+                                <label class="form-check-label" for="q4_A">
+                                  I am willing to bare the consequences of a loss to maximise my returns
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_B" value="B" name="q4">
+                                <label class="form-check-label" for="q4_B">
+                                  I am concerned about losses along with returns
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q4_C" value="C" name="q4" >
+                                <label class="form-check-label" for="q4_C">
+                                  I would prefer to avoid losses completely
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                      </div> 
+                      <!--Question 5-->
+                      <div id="q5" class="container m-3 questionnaire">
+                        <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px;">
+                          Q5. Your friend recommends you a stock with value that could double in the next 12 months. However, experts estimated the chances of this happening to be 20%. How much would you invest? </h5>
+                        <div class="row" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                          <div class="col-sm-10">
+                            <div class="form-check">
+                              <!-- For form validation: Need to change name to be specific to each -->
+                              <input class="form-check-input" id="q5_A" type="radio" value="A" name="q5" checked="checked">
+                              <label class="form-check-label" for="q5_A">
+                                Nothing
+                              </label>
+                            </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q5_B" value="B" name="q5" >
+                                <label class="form-check-label" for="q5_B">
+                                  Three months’ salary
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" id="q5_C" value="C" name = "q5">
+                                <label class="form-check-label" for="q5_C">
+                                  Six months’ salary
+                                </label>
+                              </div>
+                          </div>
+                        </div>
+                      </div> 
+                      <!--Question 6-->
+                      <div id="q6" class="container m-3 questionnaire">
+                        <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px;">
+                          Q6. Are you interested in sustainable investing? </h5>
+                        <div class="row" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                          <div class="col-sm-10">
+                            <div class="form-check">
+                              <!-- For form validation: Need to change name to be specific to each -->
+                              <input class="form-check-input" id="y" type="radio" value="y" name="q6" checked="checked">
+                              <label class="form-check-label" for="y">
+                                Yes
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" id="n" value="n" name="q6">
+                              <label class="form-check-label" for="n">
+                                No
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                      <button onclick="calRisk()" type="submit" class="btn btn-secondary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Submit</button>                                              
+                  </div>  
+                </div>                             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        async function calRisk() {
+          // Retrieve form input in your javascript 
+          var q1 = document.querySelector('input[type=radio][name=q1]:checked').value;
+          var q2 = document.querySelector('input[type=radio][name=q2]:checked').value;
+          var q3 = document.querySelector('input[type=radio][name=q3]:checked').value;
+          var q4 = document.querySelector('input[type=radio][name=q4]:checked').value;
+          var q5 = document.querySelector('input[type=radio][name=q5]:checked').value;
+          var array = [q1, q2, q3, q4, q5];
+          var numOfA = 0; 
+          var numOfB = 0; 
+          var numOfC = 0; 
+          //Determine risk tolerance
+          if (array.includes("A")){ 
+            numOfA = array.filter(x => x === "A").length;
+          }
+          if (array.includes("B")){ 
+            numOfB = array.filter(x => x === "B").length;
+          }
+          if (array.includes("C")){ 
+            numOfC = array.filter(x => x === "C").length;
+          }
+          console.log(numOfA, numOfB, numOfC); 
+
+          if (numOfC >= 3){
+            var risk = "high"; 
+          } else if (numOfA >= 3) {
+            var risk = "low"; 
+          } else {
+            var risk ="moderate";
+          }
+
+          console.log(risk);  
+        
+          // var risk_tolerance = "high";
+          var sustainability_ans = document.querySelector('input[type=radio][name=q6]:checked').value;
+          if (sustainability_ans == "y"){
+            var sustainability = "are";
+          } else{
+            var sustainability ="are not"; 
+          }
+        
+          var json_file = {
+              "risk": risk,
+              "sustainability": sustainability,
+          };
+          var serviceURL = "http://127.0.0.1:5000/storeResult";
+
+          //for error handling 
+          try {
+              // POST have different way of arranging the fetch
+              const response =
+                  await fetch(
+                      serviceURL, {
+                      method: 'POST',
+                      headers: { "Content-Type": "application/json" }, body: JSON.stringify(json_file)
+                  });
+
+                // response.json is to parse the response data as JSON into objects so that we can use it 
+                const result = await response.json();
+                if (response.status === 200) {
+                  console.log("success");
+                } else if (response.status == 404) {
+                    console.log(result.message);
+                } else {
+                    // unexpected outcome, throw the error
+                    throw response.status;
+                }
+            } catch (error) {
+                // Errors when calling the service; such as network error, 
+                // service offline, etc
+                console.log('There is a problem with request, please try again later.<br />' + error);
+            } // error
+          return window.location.href='http://127.0.0.1:5000/result';
+        };
+      </script>
+
+         <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+
+</html>

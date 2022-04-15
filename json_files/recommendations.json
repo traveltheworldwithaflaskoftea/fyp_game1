@@ -1,0 +1,28 @@
+[{
+    "_id": "r1", 
+    "rec":{
+        "s": ["flagship", "esg", "satellite" ],
+        "ns": ["flagship", "flagship", "satellite"]
+    }
+}, 
+{
+    "_id": "r2", 
+    "rec":{
+        "s": ["flagship", "esg", "cash_smart" ],
+        "ns": ["flagship", "flagship", "cash_smart"]
+    }
+}, 
+{
+    "_id": "r3", 
+    "rec":{
+        "s": ["esg", "satellite", "cash_smart" ],
+        "ns": ["flagship", "satellite", "cash_smart"]
+    }
+},  
+{
+    "_id": "r4", 
+    "rec":{
+        "s": ["esg", "esg", "flagship" ],
+        "ns": ["flagship", "flagship", "esg"]
+    }
+}]

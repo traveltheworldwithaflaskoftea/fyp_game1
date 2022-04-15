@@ -1,0 +1,275 @@
+[
+{
+    "_id": "flagship_100", 
+    "type": "Core", 
+    "typeDesc": "Globally diversified portfolios for your essential life goals", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
+    "name": "Flagship", 
+    "details": "100% Equities",
+    "source": ["Cash", "SRS", "CPF"],
+    "risk": "High risk", 
+    "link": "https://endowus.com/flagship"
+},
+
+{
+    "_id": "flagship_80", 
+    "type": "Core",
+        "typeDesc": "Globally diversified portfolios for your essential life goals", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
+    "name": "Flagship", 
+    "details": "80% Equities | 20% Fixed Income",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "High risk", 
+    "link": "https://endowus.com/flagship"
+},
+
+{
+    "_id": "flagship_60", 
+    "type": "Core",    
+    "typeDesc": "Globally diversified portfolios for your essential life goals", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
+    "name": "Flagship", 
+    "details": "60% Equities | 40% Fixed Income",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "Moderate risk", 
+    "link": "https://endowus.com/flagship"
+},
+
+{
+    "_id": "flagship_40", 
+    "type": "Core",
+    "typeDesc": "Globally diversified portfolios for your essential life goals", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
+    "name": "Flagship", 
+    "details": "40% Equities | 60% Fixed Income",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "Moderate risk", 
+    "link": "https://endowus.com/flagship"
+},
+
+{
+    "_id": "flagship_20", 
+    "type": "Core",
+    "typeDesc": "Globally diversified portfolios for your essential life goals", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
+    "name": "Flagship", 
+    "details": "20% Equities | 80% Fixed Income",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "Low risk", 
+    "link": "https://endowus.com/flagship"
+},
+
+{
+    "_id": "flagship_0", 
+    "type": "Core",
+    "typeDesc": "Globally diversified portfolios for your essential life goals", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1cd5f216e36250e73f_Flagship.png",   
+    "name": "Flagship", 
+    "details": "100% Fixed Income",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "Low risk", 
+    "link": "https://endowus.com/flagship"
+},
+
+
+{
+    "_id": "esg_100", 
+    "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
+    "name": "ESG", 
+    "details": "100% Equities",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "High risk", 
+    "link": "https://endowus.com/esg-investing"
+},
+
+{
+    "_id": "esg_80", 
+    "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
+    "name": "ESG", 
+    "details": "80% Equities | 20% Fixed Income",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "High risk", 
+    "link": "https://endowus.com/esg-investing"
+},
+
+{
+    "_id": "esg_60", 
+    "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
+    "name": "ESG", 
+    "details": "60% Equities | 40% Fixed Income",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "Moderate risk", 
+    "link": "https://endowus.com/esg-investing"
+},
+
+{
+    "_id": "esg_40", 
+    "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
+    "name": "ESG", 
+    "details": "40% Equities | 60% Fixed Income",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "Moderate risk", 
+    "link": "https://endowus.com/esg-investing"
+},
+
+{
+    "_id": "esg_20", 
+    "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
+    "name": "ESG", 
+    "details": "20% Equities | 80% Fixed Income",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "Low risk", 
+    "link": "https://endowus.com/esg-investing"
+},
+
+{
+    "_id": "esg_0", 
+    "type": "Core",
+    "typeDesc": "Globally diversified portfolios with green & socially responsible funds", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/6191027933c64ac21d855cf8_icon-core.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c9f295d521027a09c_ESG.png",   
+    "name": "ESG", 
+    "details": "100% Fixed Income",
+    "source": ["Cash", "SRS", "CPF"],    
+    "risk": "Low risk", 
+    "link": "https://endowus.com/esg-investing"
+},
+
+{
+    "_id": "global_re", 
+    "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e53ba1d0a5270b0faa6_Global%20Real%20Estate.png",   
+    "name": "Global Real Estate", 
+    "details": "Earn high dividend income & capital appreciation",
+    "source": ["Cash"],    
+    "risk": "High risk", 
+    "link": "https://endowus.com/satellite/global-real-estate"
+},
+
+{
+    "_id": "tech", 
+    "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svgg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e0d0bb0d27532efb31a_Technology.png",   
+    "name": "Technology", 
+    "details": "World's most technologically innovative companies",
+    "source":  ["Cash"],    
+    "risk": "High risk", 
+    "link": "https://endowus.com/satellite/technology"
+},
+
+{
+    "_id": "china_e", 
+    "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e49a796fe3c40c8a118_China%20Equities.png",   
+    "name": "China Equities", 
+    "details": "Best China companies listed onshore & offshore",
+    "source": ["Cash"],    
+    "risk": "High risk", 
+    "link": "https://endowus.com/satellite/china-equities"
+},
+
+{
+    "_id": "china_fi", 
+    "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e3faa6c8c9ebcce317a_China%20FI.png",   
+    "name": "China Fixed Income", 
+    "details": "China's corporate & government bonds",
+    "source": ["Cash"],    
+    "risk": "Low risk", 
+    "link": "https://endowus.com/satellite/china-fixed-income"
+},
+
+{
+    "_id": "megatrends", 
+    "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e60a2b1dfffa7c4bf5d_Megatrends.png",   
+    "name": "Megatrends", 
+    "details": "Future-driven themes like healthcare, clean energy, & AI",
+    "source": ["Cash"],    
+    "risk": "High risk", 
+    "link": "https://endowus.com/satellite/megatrends"
+},
+
+{
+    "_id": "low_vfi", 
+    "type": "Satellite",
+    "typeDesc": "Themed portfolios to gain exposure to select market opportunities", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/619102d763e9d83516a0e540_icon-satellite.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b4f2c8b2dcba/61d80e35849b800fdeb143e9_Low%20Volatility%20FI.png",   
+    "name": "Low Volatility Fixed Income", 
+    "details": "More defensive than traditional fixed income",
+    "source": ["Cash"],    
+    "risk": "Low risk", 
+    "link": "https://endowus.com/satellite/low-volatility-fixed-income"
+},
+
+{
+    "_id": "ultra", 
+    "type": "Cash Smart",
+    "typeDesc": "Earn higher yields with low risk for your short-term goals", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61910322ea41ef5ed34fb9b6_icon-cashsmart.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c849b805938b13f1a_Cashsmart.png",   
+    "name": "Ultra", 
+    "details": "Mainly high quality short duration bond & money market funds",
+    "source": ["Cash", "SRS"],    
+    "risk": "High risk", 
+    "link": "https://endowus.com/cash-smart"
+},
+
+{
+    "_id": "enhanced", 
+    "type": "Cash Smart",
+    "typeDesc": "Earn higher yields with low risk for your short-term goals", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61910322ea41ef5ed34fb9b6_icon-cashsmart.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c849b805938b13f1a_Cashsmart.png",   
+    "name": "Enhanced", 
+    "details": "Money market & high quality short duration bond funds",
+    "source": ["Cash", "SRS"],    
+    "risk": "Moderate risk", 
+    "link": "https://endowus.com/cash-smart"
+},
+
+{
+    "_id": "secure", 
+    "type": "Cash Smart",
+    "typeDesc": "Earn higher yields with low risk for your short-term goals", 
+    "icon": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61910322ea41ef5ed34fb9b6_icon-cashsmart.svg", 
+    "image": "https://assets-global.website-files.com/61263092cbd1b46804b2dcb7/61d80c1c849b805938b13f1a_Cashsmart.png",   
+    "name": "Secure", 
+    "details": "Cash & money market funds",
+    "source": ["Cash", "SRS"],    
+    "risk": "Low risk", 
+    "link": "https://endowus.com/cash-smart"
+}
+]

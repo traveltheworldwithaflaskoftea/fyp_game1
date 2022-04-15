@@ -1,0 +1,15 @@
+[{
+    "_id": "user4", 
+    "email": "user4@gmail.com", 
+    "name": "John"
+},
+{
+    "_id": "user4", 
+    "email": "user4@gmail.com", 
+    "name": "Kelly", 
+    "goal":"2", 
+    "lifestage":"student", 
+    "risk":"moderate", 
+    "sustainability":"are not"
+} 
+]
