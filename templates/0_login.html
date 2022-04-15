@@ -19,22 +19,163 @@
 
     <title>Login</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+            *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main{
+            width: calc(100vw / 2 + 25px);
+            max-width: 410px;
+            min-width: 290px;
+            min-heigth: calc(100vh - 20vh);
+            background: rgb(212, 237, 248);
+            padding: 24px 24px;
+            border-radius: 5px;
+            padding-bottom: 32px;
+            position:absolute;
+            gap: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 100px 433px;
+        }
+
+        .main .login{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .main .login h1{
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.8px;
+            font-size: 26px;
+            color: #111;
+            margin-bottom: 24px;
+            font-weight: 300;
+        }
+
+        .main .group{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .main input{
+            width: 100%;
+            height: 46px;
+            background: #090526;
+            border-radius: 4px;
+            border: unset;
+            padding-left: 15px;
+            color: #ddd;
+        }
+
+        .main input:focus{
+            outline: 2px solid #2742dc
+        }
+
+        .main input::placeholder{
+            color: #aaa;
+        }
+
+        .main a{
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            color: #2742dc;
+            margin-top: 0px;
+                transition: 250ms linear;
+        }
+
+        .main a:hover{
+        color: #2742dc;
+            text-decoration: underline;
+        }
+
+        .main .btn{
+            width: 100%;
+            height: 48px;
+            border-radius: 6px;
+            border: 2px solid transparent;
+            background: #0e2cd3;
+            color: #dedede;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 24px;
+            transition: 250ms linear;
+            font-size: 16px;
+        }
+
+        .main .btn:hover{
+            background: #2742dc;
+        }
+
+        .main .row{
+            display: flex;
+            width: 100%;
+            height: 6px;
+            position: relative;
+            margin: 8px 0;
+        }
+
+        .main .row::before,
+        .main .row::after{
+            content: "";
+            position: absolute;
+            height: 0.5px;
+            width: calc(50% - 3px);
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            background: linear-gradient(to right, #090526dd, rgba(0,0,50,0.3));
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .main .row::after{
+        left: unset;
+            right: 0;
+        background: linear-gradient(to left, #090526dd, rgba(0,0,50,0.3))
+        }
+
+        .main .login .groupRow{
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            align-items: center;
+            min-height: 46px;
+            width: 100%;
+            color: #444;
+            font-size: 14px;
+        }
+
+
         body {
             background: url('https://fyp-game1.s3.amazonaws.com/assets/bckgrnd2.jpg') no-repeat center fixed;
             background-size: cover;
-            /* hover pop up */
             overflow-x: hidden
         }
 
         .zoom {
-            transition: transform .2s; /* Animation */
+            transition: transform .2s; 
             width: 200px;
             height: 900px;
             margin: 0 auto;
         }
 
         .zoom:hover {
-            transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+            transform: scale(1.5); 
         }
 
         .btn{
@@ -74,8 +215,6 @@
             margin-bottom: 20px
         }
 
-
-
   </style>
   </head>
   <body>
@@ -83,73 +222,29 @@
         <a class="navbar-brand mx-0" href="https://endowus.com/">
             <img src="https://fyp-game1.s3.amazonaws.com/assets/endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
         </a>
-        <form class="form-inline" action="" method="post">
+      </nav>
+      <main class="main">
+        <div class="icon"></div>
+        <form class="login form-inline" action="" method="post">
+          <h1 class="text-center" style="font-family: 'Press Start 2P', cursive; font-size: 15px;">Portfolio Recommender <br><br> Login</h1>
+          <div class="group">
+            <label for="user"></label>
+            <input type="email" name="email" id="InputEmail" style="font-family: 'monospace'; font-size: 18px;" id="user" placeholder="Enter Email">
+          </div>
+
+          <div class="group" style="font-family: 'monospace'; font-size: 15px;">
             {% if message  %}
                 {{ message }}
             {% endif %}
-            <input class="form-control mr-sm-2" type="email" name="email" id="InputEmail" placeholder="Enter Email" aria-label="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Log In</button>
+          </div>
+          <button class="btn" style="font-family: 'Press Start 2P', cursive; font-size: 12px;" type="submit">Log In</button>
+          <div class="row"></div>
+          <div class="groupRow">
+            </button>
+          </div>
         </form>
-      </nav>
+      </main>
 
-    <div class="py-5">
-        <div class="container px-sm-1">
-            <div class="container p-4 px-5 bg-light rounded-3 text-center">
-                <div class="m-2 mb-3">
-                    <h3 style="font-family: 'Bungee', cursive; font-size: 32px;">Choose your character!</h3>
-                    <h6 style="font-family: 'Iceland', cursive; font-size: 23px;">Please choose the life stage that relates most to your goals</h6> 
-                </div> 
-                <!-- Characters Row 1-->
-                <div class="card-group">
-                    {% set id_row1 = ["student", "fresh_grad", "bachelor"] %}
-                    {% for id in id_row1 %}
-                        {% for lifestage in lifestages %}                    
-                            {% if lifestage._id == id %}
-                                <div class="card border-secondary mb-3">
-                                    <div class="card-header" style="font-family: 'Press Start 2P', cursive; font-size: 15px;">{{ lifestage.name }}</div>
-                                    <img src="{{ lifestage.img }}" class="card-img-top mx-auto mt-3 zoom" alt={{ lifestage.name }} style="width: auto; height: 100px">
-                                <!-- on hover show description -->
-                                    <div class="cover">
-                                        <p class="title mx-3" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">{{ lifestage.description }}</p>
-                                    <button onclick="window.location.href='http://127.0.0.1:5000/goal/{{ lifestage._id }}';" type="button" class="btn btn-secondary" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Select</button><br>
-                                    </div>
-                                    <div class="card-body text-secondary ">       
-                                        <h5 style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Average Income: </h5> 
-                                        <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.income }} <br></p>
-                                        <h5 style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Possible responsibility:</h5>
-                                        <div class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.goals["1"] }}</div>
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}    
-                </div>
-                <div class="card-group">
-                    {% set id_row1 = ["married_man", "family_man"] %}
-                    {% for lifestage in lifestages %}
-                        {% if lifestage._id in id_row1 %}
-                            <div class="card border-secondary mb-3">
-                                <div class="card-header" style="font-family: 'Press Start 2P', cursive; font-size: 15px;">{{ lifestage.name }}</div>
-                                <img src="{{ lifestage.img }}" class="card-img-top mx-auto mt-3 zoom" alt="Student" style="width: auto; height: 100px">
-                            <!-- on hover show description -->
-                                <div class="cover">
-                                    <p class="title mx-3" style="font-family: 'Press Start 2P', cursive; font-size: 10px;">{{ lifestage.description }}</p>
-                                <button onclick="window.location.href='http://127.0.0.1:5000/goal/{{ lifestage._id }}';" type="button" class="mt-3 btn btn-secondary" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Select</button><br>
-                                </div>
-                                <div class="card-body text-secondary ">       
-                                    <h5 style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Average Income: </h5> 
-                                    <p class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.income }} <br></p>
-                                    <h5 style="font-family: 'Press Start 2P', cursive; font-size: 13px;">Possible responsibility:</h5>
-                                    <div class="card-text"  style="font-family: 'Iceland', cursive; font-size: 22px; text-align:center;">{{ lifestage.goals["1"] }}</div>
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}    
-                </div>
-            </div>
-        </div>                   
-    </div>
- 
        <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
