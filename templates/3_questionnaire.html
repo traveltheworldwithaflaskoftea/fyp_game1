@@ -44,6 +44,18 @@
         li {
             list-style-type: none;
         }
+
+        .dropdown-toggle::after {
+            content: none;
+        }
+
+        ul{
+            margin: 0%;
+        }
+
+        .profile-name{
+            text-align:center;
+        }
         .dropdown-toggle::after {
             content: none;
         }
@@ -54,7 +66,48 @@
             text-align:center;
         }
 
+        div.outset {
+          border-style: outset;
+          margin-bottom: 8px;
+          color:rgb(245, 245, 245)
+        }
 
+      .modal-content { 
+        background-image: url("https://fyp-game1.s3.amazonaws.com/assets/modal+background.png");
+ 
+      }
+
+      .speech-bubble {
+        position: relative;
+        background-color: #efefef;
+        border-radius: .4em;
+        line-height: 22px;
+        letter-spacing: 1px;
+        margin-top: 36px;
+        margin-bottom: 48px;
+        width: 300px;
+        padding: 16px;
+        margin-left: 420px;
+      }
+
+      .speech-bubble:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-top-color: #efefef;
+        border-bottom: 0;
+        border-left: 0;
+        margin-left: -10px;
+        margin-bottom: -20px;
+      }
+
+      h3.header {
+        margin-top: -5%;
+      }
     </style>
     </head>
     <body>
@@ -75,6 +128,143 @@
       </ul>
       </nav>
 
+      <!-- Modal 1 -->
+            <div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="modal-1" aria-hidden="true" style="color:rgb(245, 245, 245)">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                      <!--Question 1-->
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <div id="q1" class="container m-3 questionnaire">
+                        <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px">Q1. You are on a TV game show and can choose one of the following. Which would you take?</h5></h5>
+                  </div>
+                  <div class="modal-body" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                        <div class="form-check outset">
+                          <!-- For form validation: Need to change name to be specific to each -->
+                          <input class="form-check-input" id="A" type="radio" value="A" name="q1" checked="checked">
+                          <label class="form-check-label" for="A">
+                            $1,000 in cash
+                          </label>
+                        </div>
+                        <div class="form-check outset">
+                          <input class="form-check-input" type="radio" id="B" value="B" name="q1">
+                          <label class="form-check-label" for="B">
+                            A 50% chance at winning $5,000
+                          </label>
+                        </div>
+                          <div class="form-check outset">
+                            <input class="form-check-input" type="radio" id="C" value="C" name = "q1">
+                            <label class="form-check-label" for="C">
+                              A 25% chance at winning $10,000
+                            </label>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button"  class="btn btn-primary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;"   data-toggle="modal" data-dismiss="modal" data-target="#modal-2">Next</button>
+                      </div>
+                    </div>
+                  </div> 
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+      
+      <!-- end of modal 1 -->
+
+      <!-- Modal 2 -->
+      <div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="modal-2" aria-hidden="true" style="color:rgb(245, 245, 245)">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                <!--Question 2-->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div id="q2" class="container m-3 questionnaire">
+                  <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px">Q2. Given the best and worst case returns of the four investment choices below, which would you prefer?</h5></h5>
+            </div>
+            <div class="modal-body" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                  <div class="form-check outset">
+                  <!-- For form validation: Need to change name to be specific to each -->
+                  <input class="form-check-input" id="q2_A" type="radio" value="A" name="q2" checked="checked">
+                  <label class="form-check-label" for="q2_A">
+                    $200 gain best case; $0 gain/loss worst case
+                  </label>
+                  </div>
+                  <div class="form-check outset">
+                  <input class="form-check-input" type="radio" id="q2_B" value="B" name="q2">
+                  <label class="form-check-label" for="q2_B">
+                    $800 gain best case; $200 loss worst case
+                  </label>
+                  </div>
+                  <div class="form-check outset">
+                    <input class="form-check-input" type="radio" id="q2_C" value="C" name = "q2">
+                    <label class="form-check-label" for="q2_C">
+                      $4,800 gain best case; $2,400 loss worst case
+                    </label>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;"   data-toggle="modal" data-dismiss="modal" data-target="#modal-1">Previous</button>
+                  <button type="button" class="btn btn-primary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;"   data-toggle="modal" data-dismiss="modal" data-target="#modal-3">Next</button>
+                </div>
+              </div>
+            </div> 
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of modal 2 -->
+
+      <!-- Modal 3 -->
+            <div class="modal fade" id="modal-3" tabindex="-1" role="dialog" aria-labelledby="modal-3" aria-hidden="true" style="color:rgb(245, 245, 245)">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                      <!--Question 3-->
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <div id="q3" class="container m-3 questionnaire">
+                        <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px">Q3. In addition to whatever you own, you have been given $1,000. You are now asked to choose between:</h5></h5></h5>
+                      </div>
+                    <div class="modal-body" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                        <div class="form-check outset">
+                          <!-- For form validation: Need to change name to be specific to each -->
+                          <input class="form-check-input" id="q3_A" type="radio" value="A" name="q3" checked="checked">
+                          <label class="form-check-label" for="q3_A">
+                            100% sure gain of $500
+                          </label>
+                        </div>
+                        <div class="form-check outset">
+                          <input class="form-check-input" type="radio" id="q3_B" value="B" name="q3">
+                          <label class="form-check-label" for="q3_B">
+                            60% chance to gain $800
+                          </label>
+                        </div>
+                        <div class="form-check outset">
+                          <input class="form-check-input" type="radio" id="q3_C" value="C" name = "q3">
+                          <label class="form-check-label" for="q3_C">
+                            30% chance to gain $1,500
+                          </label>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;"  data-toggle="modal" data-dismiss="modal" data-target="#modal-2">Previous</button>
+                        <button type="button" class="btn btn-primary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;"   data-toggle="modal" data-dismiss="modal" data-target="#modal-4">Next</button>
+                      </div>
+                    </div>
+                  </div> 
+                  </div>
+      
+                </div>
       <div class="py-5">
         <div class="container px-sm-1">
           <div class="container p-4 px-5 bg-light rounded-3 text-center">
@@ -252,9 +442,175 @@
                 </div>                             
               </div>
             </div>
+      
+      <!-- end of modal 3 -->
+
+      <!-- Modal 4 -->
+      <div class="modal fade" id="modal-4" tabindex="-1" role="dialog" aria-labelledby="modal-4" aria-hidden="true" style="color:rgb(245, 245, 245)">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                <!--Question 4-->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div id="q4" class="container m-3 questionnaire">
+                  <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px">Q4. Which statement makes the most sense to you?</h5></h5>
+            </div>
+            <div class="modal-body" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                  <div class="form-check outset">
+                    <!-- For form validation: Need to change name to be specific to each -->
+                    <input class="form-check-input" id="q4_A" type="radio" value="A" name="q4" checked="checked">
+                    <label class="form-check-label" for="q4_A">
+                      I am willing to bear the consequences of a loss to maximise my returns
+                    </label>
+                  </div>
+                  <div class="form-check outset">
+                    <input class="form-check-input" type="radio" id="q4_B" value="B" name="q4">
+                    <label class="form-check-label" for="q4_B">
+                      I am concerned about losses along with returns
+                    </label>
+                  </div>
+                  <div class="form-check outset">
+                    <input class="form-check-input" type="radio" id="q4_C" value="C" name="q4" >
+                    <label class="form-check-label" for="q4_C">
+                      I would prefer to avoid losses completely
+                    </label>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;"   data-toggle="modal" data-dismiss="modal" data-target="#modal-3">Previous</button>
+                  <button type="button" class="btn btn-primary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;"   data-toggle="modal" data-dismiss="modal" data-target="#modal-5">Next</button>
+                </div>
+              </div>
+            </div> 
+            </div>
+
           </div>
         </div>
       </div>
+
+      <!-- end of modal 4 -->
+
+      <!-- Modal 5 -->
+      <div class="modal fade" id="modal-5" tabindex="-1" role="dialog" aria-labelledby="modal-5" aria-hidden="true" style="color:rgb(245, 245, 245)">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                <!--Question 5-->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div id="q5" class="container m-3 questionnaire">
+                  <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px">Q5. Your friend recommends you a stock with value that could double in the next 12 months. However, experts estimated the chances of this happening to be 20%. How much would you invest?</h5></h5>
+            </div>
+            <div class="modal-body" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                  <div class="form-check outset">
+                    <!-- For form validation: Need to change name to be specific to each -->
+                    <input class="form-check-input" id="q5_A" type="radio" value="A" name="q5" checked="checked">
+                    <label class="form-check-label" for="q5_A">
+                      Nothing
+                    </label>
+                  </div>
+                    <div class="form-check outset">
+                      <input class="form-check-input" type="radio" id="q5_B" value="B" name="q5" >
+                      <label class="form-check-label" for="q5_B">
+                        Three months’ salary
+                      </label>
+                    </div>
+                    <div class="form-check outset">
+                      <input class="form-check-input" type="radio" id="q5_C" value="C" name = "q5">
+                      <label class="form-check-label" for="q5_C">
+                        Six months’ salary
+                      </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;"   data-toggle="modal" data-dismiss="modal" data-target="#modal-4">Previous</button>
+                  <button type="button" class="btn btn-primary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;"  data-toggle="modal" data-dismiss="modal" data-target="#modal-6">Next</button>
+                </div>
+              </div>
+            </div> 
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- end of modal 5 -->
+
+      <!-- Modal 6 -->
+      <div class="modal fade" id="modal-6" tabindex="-1" role="dialog" aria-labelledby="modal-6" aria-hidden="true" style="color:rgb(245, 245, 245)">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                <!--Question 6-->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div id="q6" class="container m-3 questionnaire">
+                  <h5 class="questionnaire mb-0" style="font-family: monospace; font-size: 16px">Q6. Are you interested in sustainable investing?</h5></h5>
+            </div>
+            <div class="modal-body" style="font-family: 'Montserrat', sans-serif;font-size: 15px;">
+                  <div class="form-check outset">
+                    <!-- For form validation: Need to change name to be specific to each -->
+                    <input class="form-check-input" id="y" type="radio" value="y" name="q6" checked="checked">
+                    <label class="form-check-label" for="y">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="form-check outset">
+                    <input class="form-check-input" type="radio" id="n" value="n" name="q6">
+                    <label class="form-check-label" for="n">
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;" data-toggle="modal" data-dismiss="modal" data-target="#modal-5">Previous</button>
+                  <button onclick="calRisk()" type="submit" class="btn btn-primary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;">Submit</button> 
+                </div>
+              </div>
+            </div> 
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- end of modal 6 -->      
+    
+      <div class="py-5">
+        <div class="container px-sm-1"> 
+          <!-- <div class="container p-4 px-5 bg-light rounded-3 text-center"> -->
+          <div class="container p-4 px-5 rounded-3 text-center">
+            <div class="m-2 mb-3 align-items-center">
+                <h3 class="header mb-0" style="font-family: 'Bungee', cursive; font-size: 32px;">Get to know yourself better! 🚀</h3>
+                <h3 style="font-family: 'Iceland', cursive; font-size: 23px; color: rgb(12, 12, 12);">Find out your risk tolerance & indicate investment preferences</h3> 
+                
+                <!-- Bubble Start -->
+                <div class="speech-bubble bubble-left">
+                  <h2 class="author" style="font-family: 'Bungee', cursive; font-size: 23px;">
+                    Hey there!
+                    </h2>
+                    
+                    <div class="message" style="font-family: 'Iceland', cursive; font-size: 23px; color: black;">
+                      Click the button below to take the questionnaire!
+                      
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-lg mt-3 mb-3" style="font-family: 'Press Start 2P', cursive; font-size: 12px;"  data-toggle="modal" data-target="#modal-1">
+                      Get Started
+                    </button>
+                    </div>
+                  </div>
+                  <!-- Bubble End -->
+            </div>   
+
+            <img src="https://fyp-game1.s3.amazonaws.com/assets/student.png" class="icon mx-auto mt-3 zoom" style="width: auto; height: 140px">
+
       <script>
         async function calRisk() {
           // Retrieve form input in your javascript 
@@ -330,6 +686,8 @@
             } // error
           return window.location.href='http://127.0.0.1:5000/result';
         };
+
+ 
       </script>
 
          <!-- Optional JavaScript -->
