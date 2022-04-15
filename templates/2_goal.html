@@ -16,7 +16,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
 
       <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Iceland&display=swap" rel="stylesheet">
-      <title>Game 1</title>
+      <title>Goals</title>
       <style>
         body {
             background: url('https://fyp-game1.s3.amazonaws.com/assets/bckgrnd2.jpg') no-repeat center fixed;
@@ -67,12 +67,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="/logout">Log Out</a>
             </div>
-            {% set userid = session.get("user") %}
-            {% for user in users %}
-                {% if user._id == userid %}
-                    <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ user.name }}</div>
-                {% endif %}
-            {% endfor %}  
+            <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ name }}</div>
         </li>   
     </ul>
     </nav>
