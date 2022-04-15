@@ -1,11 +1,1 @@
-Flask==2.0.2
-Flask-Cors==3.0.10
 Flask-PyMongo==2.3.0
-Flask-Session==0.4.0
-Flask-Testing==0.8.1
-Jinja2==3.0.1
-MarkupSafe==2.0.1
-mongoengine==0.23.1
-mongomock==3.23.0
-pymongo==3.12.0
-Werkzeug==2.0.2
