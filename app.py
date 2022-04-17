@@ -160,7 +160,10 @@ def displayQuestions():
         print("/questionnaire", user)
         user_data = mongo.db.user.find_one_or_404({"_id": user})
         name = user_data["name"]
-        return render_template("3_questionnaire.html", name = name )
+        lifestage = user_data["lifestage"]
+        lifestage_data = mongo.db.lifestage.find_one_or_404({"_id": lifestage})
+        img = lifestage_data["img"]
+        return render_template("3_questionnaire.html", name = name, img = img )
     else: 
         return render_template("7_reqLogin.html")
 
