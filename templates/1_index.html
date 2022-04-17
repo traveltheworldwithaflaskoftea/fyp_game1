@@ -100,17 +100,18 @@
         <ul>
             <li class="nav-item">
                 <div class="btn-group dropleft">
-                    <a class="btn pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="btn pr-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="https://fyp-game1.s3.amazonaws.com/assets/user-solid.svg" width="40" height="40" class="rounded-circle"> 
+                        <div class="profile-name pr-2 mt-1" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ name }}</div>
                     </a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu" style ="min-width: 7rem; font-family: 'Press Start 2P', cursive; font-size: 8px; color: black;"">
                       <!-- Dropdown menu links -->
-                        <a class="dropdown-item" href="/recommendation">Recommendation</a>
-                        <a class="dropdown-item" href="/logout">Log Out</a>
+                        <a class="dropdown-item px-2" href="/recommendation">Recommendation</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item px-2" href="/logout">Log Out</a>
                     </div>
-                    <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ name }}</div>
                 </div>
-            </li> 
+              </li> 
         </ul>
     </nav>
 
