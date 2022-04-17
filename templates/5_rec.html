@@ -65,16 +65,19 @@
           <img src="https://fyp-game1.s3.amazonaws.com/assets/endowus-logo.png" alt=""  height="60" class="d-inline-block align-text-top">
       </a>
       <ul>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="https://fyp-game1.s3.amazonaws.com/assets/user-solid.svg" width="40" height="40" class="rounded-circle"> 
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/recommendation">Recommendation</a>
-              <a class="dropdown-item" href="/logout">Log Out</a>
-            </div>
-            <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ name }}</div>
-        </li>   
+        <li class="nav-item">
+          <div class="btn-group dropleft">
+              <a class="btn pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="https://fyp-game1.s3.amazonaws.com/assets/user-solid.svg" width="40" height="40" class="rounded-circle"> 
+              </a>
+              <div class="dropdown-menu">
+                <!-- Dropdown menu links -->
+                  <a class="dropdown-item" href="/recommendation">Recommendation</a>
+                  <a class="dropdown-item" href="/logout">Log Out</a>
+              </div>
+              <div class="profile-name" style="font-family: 'Press Start 2P', cursive; font-size: 10px; color: black;">{{ name }}</div>
+          </div>
+      </li> 
     </ul>
     </nav>
 
