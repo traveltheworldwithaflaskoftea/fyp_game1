@@ -210,6 +210,7 @@ def getRecommendation():
             goal = user_data["goal"]
             sustainability = user_data["sustainability"]
             risk = user_data["risk"]
+            existingRecc = user_data["recommendations"]
             if str(sustainability) == "are":
                 sustainability = "s"
             else: 
@@ -229,7 +230,7 @@ def getRecommendation():
             # print(rec)
 
             #4. Get specific portfolio _id in an array
-            portfolioIDs = [] 
+            portfolioIDs = []
             portfolios = mongo.db.byrisk.find_one_or_404({"_id": risk})
 
             #Function: Choose random portfolio ID  
@@ -238,25 +239,28 @@ def getRecommendation():
                 chosenPortfolio = random.choice(tuple(portfolioByCategory))
                 portfolioIDs.append(chosenPortfolio)
 
-            #Checking for flagship duplicates
-            if rec.count("flagship") > 1: 
-                for i in portfolios["flagship"]: 
-                    portfolioIDs.append(i)
-                randomPortfolio(rec[2])
-            elif rec.count("esg") > 1: 
-                for i in portfolios["esg"]: 
-                    portfolioIDs.append(i)
-                randomPortfolio(rec[2])
+            #Deciding on random portfolios 
+            if existingRecc != []: 
+                portfolioIDs = existingRecc
             else: 
-                for item in rec: 
-                    randomPortfolio(item)
+                if rec.count("flagship") > 1: 
+                    for i in portfolios["flagship"]: 
+                        portfolioIDs.append(i)
+                    randomPortfolio(rec[2])
+                elif rec.count("esg") > 1: 
+                    for i in portfolios["esg"]: 
+                        portfolioIDs.append(i)
+                    randomPortfolio(rec[2])
+                else: 
+                    for item in rec: 
+                        randomPortfolio(item)
             #print(rec)
             print(portfolioIDs)
 
             #Save the recommendations in DB
             mongo.db.user.find_one_and_update(
                     {"_id": user},
-                    {"$set": {"recommendations": portfolioIDs, "reason": reason} },
+                    {"$set": {"recommendations": portfolioIDs} },
                     return_document=ReturnDocument.AFTER,
             )
         
