@@ -256,7 +256,7 @@ def getRecommendation():
             #Save the recommendations in DB
             mongo.db.user.find_one_and_update(
                     {"_id": user},
-                    {"$set": {"recommendations": portfolioIDs}},
+                    {"$set": {"recommendations": portfolioIDs}, {"reason": reason}},
                     return_document=ReturnDocument.AFTER,
             )
         
@@ -279,6 +279,21 @@ def getRecommendation():
         else: 
             return render_template("7_regLogin.html")
 
+    except Exception as e: 
+        return dumps({'error': str(e)})
+
+#getPrevRecommendation 
+@app.route('/prev_recommendation')
+def getPrevRecommendation():
+    try:
+        #0. Check if session exist 
+        if 'user' in session:  
+            user = session["user"]
+            user_data = mongo.db.user.find_one_or_404({"_id": user})
+            portfolioFile = user_data["recommendations"]
+            reason = user_data["reason"]
+            name = user_data["name"]
+            return render_template("5_rec.html", portfolioFile = portfolioFile, reason = reason, name = name ), 200
     except Exception as e: 
         return dumps({'error': str(e)})
 
