@@ -256,7 +256,7 @@ def getRecommendation():
             #Save the recommendations in DB
             mongo.db.user.find_one_and_update(
                     {"_id": user},
-                    {"$set": {"recommendations": portfolioIDs}, {"reason": reason}},
+                    {"$set": {"recommendations": portfolioIDs, "reason": reason} },
                     return_document=ReturnDocument.AFTER,
             )
         
@@ -294,6 +294,8 @@ def getPrevRecommendation():
             reason = user_data["reason"]
             name = user_data["name"]
             return render_template("5_rec.html", portfolioFile = portfolioFile, reason = reason, name = name ), 200
+        else: 
+            return render_template("7_regLogin.html")
     except Exception as e: 
         return dumps({'error': str(e)})
 
