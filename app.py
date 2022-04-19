@@ -210,7 +210,6 @@ def getRecommendation():
             goal = user_data["goal"]
             sustainability = user_data["sustainability"]
             risk = user_data["risk"]
-            existingRecc = user_data["recommendations"]
             if str(sustainability) == "are":
                 sustainability = "s"
             else: 
@@ -240,20 +239,17 @@ def getRecommendation():
                 portfolioIDs.append(chosenPortfolio)
 
             #Deciding on random portfolios 
-            if existingRecc != []: 
-                portfolioIDs = existingRecc
+            if rec.count("flagship") > 1: 
+                for i in portfolios["flagship"]: 
+                    portfolioIDs.append(i)
+                randomPortfolio(rec[2])
+            elif rec.count("esg") > 1: 
+                for i in portfolios["esg"]: 
+                    portfolioIDs.append(i)
+                randomPortfolio(rec[2])
             else: 
-                if rec.count("flagship") > 1: 
-                    for i in portfolios["flagship"]: 
-                        portfolioIDs.append(i)
-                    randomPortfolio(rec[2])
-                elif rec.count("esg") > 1: 
-                    for i in portfolios["esg"]: 
-                        portfolioIDs.append(i)
-                    randomPortfolio(rec[2])
-                else: 
-                    for item in rec: 
-                        randomPortfolio(item)
+                for item in rec: 
+                    randomPortfolio(item)
             #print(rec)
             print(portfolioIDs)
 
@@ -293,11 +289,52 @@ def getPrevRecommendation():
         #0. Check if session exist 
         if 'user' in session:  
             user = session["user"]
+            print("/recommendation", user)
             user_data = mongo.db.user.find_one_or_404({"_id": user})
-            portfolioFile = user_data["recommendations"]
-            reason = user_data["reason"]
             name = user_data["name"]
-            return render_template("5_rec.html", portfolioFile = portfolioFile, reason = reason, name = name ), 200
+            #1. Get goal num , interest in sustainability & risk
+            user_data = mongo.db.user.find_one_or_404({"_id": user})
+            lifestage = user_data["lifestage"]
+            goal = user_data["goal"]
+            sustainability = user_data["sustainability"]
+            risk = user_data["risk"]
+            existingRecc = user_data["recommendations"]
+            if str(sustainability) == "are":
+                sustainability = "s"
+            else: 
+                sustainability = "ns"
+            #print(goal,sustainability, lifestage, risk)
+
+            #2. Get mapping & fund source
+            mappings = mongo.db.mappings.find_one_or_404({"_id": lifestage})
+            mapping = mappings[goal]["rec"]
+            source = mappings[goal]["source"]
+            reason = mappings[goal]["reason"]
+            #print(mapping, source)
+
+            #3. Get portfolio category array according to sustainability 
+            recommendations = mongo.db.recommendations.find_one_or_404({"_id": mapping})
+            rec = recommendations["rec"][sustainability]
+            # print(rec)
+
+            #4. Get specific portfolio _id in an array
+            portfolioIDs = existingRecc     
+
+            #5. Return portfolios to be visualised 
+            portfolioFile = []
+            for id in portfolioIDs:    
+                recSources = [] 
+                finalRecommend = mongo.db.portfolio.find_one_or_404({"_id": id})
+                for i in source: 
+                    if i in finalRecommend["source"]: 
+                        recSources.append(i)
+                print("list:", recSources)
+                recSources = ", ".join(recSources)
+                print("string:",  recSources)
+                finalRecommend["source"] = recSources
+                portfolioFile.append(finalRecommend)
+            #print(portfolioFile)
+            return render_template("5_rec.html", portfolioFile = portfolioFile, reason = reason, name=name), 200
         else: 
             return render_template("7_regLogin.html")
     except Exception as e: 
