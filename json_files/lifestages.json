@@ -1,7 +1,7 @@
 [
     {
         "_id": "student", 
-        "img": "https://fyp-game1.s3.amazonaws.com/assets/student.png", 
+        "img": "http://localhost/GitHub/fyp_game1/assets/student.png", 
         "name": "Student",
         "income": "Under $5,000", 
         "goals": { 
@@ -13,7 +13,7 @@
     }, 
     {
         "_id": "fresh_grad", 
-        "img": "https://fyp-game1.s3.amazonaws.com/assets/freshgrad.png", 
+        "img": "http://localhost/GitHub/fyp_game1/assets/freshgrad.png", 
         "name": "Fresh Grad",
         "income": "$36,000 ~ $48,000", 
         "goals": { 
@@ -25,7 +25,7 @@
     }, 
     {
         "_id": "bachelor", 
-        "img": "https://fyp-game1.s3.amazonaws.com/assets/bachelor.png", 
+        "img": "http://localhost/GitHub/fyp_game1/assets/bachelor.png", 
         "name": "Bachelor",
         "income": "$84,000 ~ $120,000", 
         "goals": { 
@@ -37,7 +37,7 @@
     }, 
     {
         "_id": "married_man", 
-        "img": "https://fyp-game1.s3.amazonaws.com/assets/married.png", 
+        "img": "http://localhost/GitHub/fyp_game1/assets/married.png", 
         "name": "Married Man",
         "income": "$100,000 - $120,000", 
         "goals": { 
@@ -49,7 +49,7 @@
     }, 
     {
         "_id": "family_man", 
-        "img": "https://fyp-game1.s3.amazonaws.com/assets/family.png", 
+        "img": "http://localhost/GitHub/fyp_game1/assets/family.png", 
         "name": "Family Man",
         "income": "$100,000 - $120,000", 
         "goals": { 
